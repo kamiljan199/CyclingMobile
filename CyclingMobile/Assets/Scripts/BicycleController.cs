@@ -22,6 +22,7 @@ public class BicycleController : MonoBehaviour
     private float energy;
     public float maxEnergy = 100.0f;
 
+    public int gear = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -40,9 +41,9 @@ public class BicycleController : MonoBehaviour
         {
             if (movement < 1.0f)
             {
-                movement += 0.05f;
+                movement += 0.05f * gear;
             }
-            else movement = 1.0f;
+            else movement = 1.0f * gear;
 
             energy -= 0.1f;
             energyBar.SetEnergy(energy);
@@ -52,9 +53,9 @@ public class BicycleController : MonoBehaviour
         {
             if (movement > -1.0f)
             {
-                movement -= 0.05f;
+                movement -= 0.05f * gear;
             }
-            else movement = -1.0f;
+            else movement = -1.0f * gear;
         }
     }
 
