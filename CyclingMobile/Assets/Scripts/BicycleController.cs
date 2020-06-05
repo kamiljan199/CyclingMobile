@@ -41,9 +41,9 @@ public class BicycleController : MonoBehaviour
         {
             if (movement < 1.0f)
             {
-                movement += 0.05f * gear;
+                movement += 0.05f * gear * 0.5f;
             }
-            else movement = 1.0f * gear;
+            else movement = 1.0f * gear * 0.5f;
 
             energy -= 0.1f * gear;
             energyBar.SetEnergy(energy);
@@ -53,9 +53,9 @@ public class BicycleController : MonoBehaviour
         {
             if (movement > -1.0f)
             {
-                movement -= 0.05f * gear;
+                movement -= 0.05f * gear * 0.5f;
             }
-            else movement = -1.0f * gear;
+            else movement = -1.0f * gear * 0.5f;
         }
     }
 
