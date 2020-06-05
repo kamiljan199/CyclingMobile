@@ -45,7 +45,7 @@ public class BicycleController : MonoBehaviour
             }
             else movement = 1.0f * gear;
 
-            energy -= 0.1f;
+            energy -= 0.1f * gear;
             energyBar.SetEnergy(energy);
         }
 
