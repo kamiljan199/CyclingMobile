@@ -168,7 +168,7 @@ public class BicycleController : MonoBehaviour
             Debug.Log("el");
             endText.SetActive(true);
             //Application.Quit();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("LevelChoser", LoadSceneMode.Single);
         }
     }
 
