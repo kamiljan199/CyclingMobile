@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BicycleController : MonoBehaviour
 {
@@ -165,8 +166,9 @@ public class BicycleController : MonoBehaviour
         if (collision.CompareTag("End"))
         {
             Debug.Log("el");
-            endText.SetActive(true); 
-            Application.Quit();
+            endText.SetActive(true);
+            //Application.Quit();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
