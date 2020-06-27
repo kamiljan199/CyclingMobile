@@ -2575,7 +2575,7 @@ GameObject:
   - component: {fileID: 1844113424}
   - component: {fileID: 1844113423}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Swipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2598,6 +2598,8 @@ MonoBehaviour:
   tap: 0
   swipeUp: 0
   swipeDown: 0
+  swipeLeft: 0
+  swipeRigth: 0
   isDragging: 0
   startTouch: {x: 0, y: 0}
   swipeDelta: {x: 0, y: 0}
