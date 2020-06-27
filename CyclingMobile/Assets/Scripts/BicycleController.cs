@@ -130,7 +130,7 @@ public class BicycleController : MonoBehaviour
     {
         if (force > 0)
         {
-            Debug.Log(movement);
+            //Debug.Log(movement);
 
             backWheel.AddTorque(-movement * speed * Time.fixedDeltaTime);
             frontWheel.AddTorque(-movement * speed * Time.fixedDeltaTime);

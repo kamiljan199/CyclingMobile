@@ -22,6 +22,7 @@ public class Swipe : MonoBehaviour
 
     void Update()
     {
+        gearStateNumber.text = bike.gear.ToString();
         tap = swipeUp = swipeDown = swipeLeft = swipeRigth = false;
 
         //mouse
@@ -66,7 +67,7 @@ public class Swipe : MonoBehaviour
             }
         }
 
-        if(swipeDelta.magnitude > 50)
+        if(swipeDelta.magnitude > 150)
         {
             float x = swipeDelta.x;
             float y = swipeDelta.y;
@@ -83,19 +84,17 @@ public class Swipe : MonoBehaviour
             }
             else
             {
+                if (y < 0)
                 {
-                    if (y < 0)
-                    {
-                        swipeDown = true;
-                        GearDown();
-                        Debug.Log("up");
-                    }
-                    else
-                    {
-                        swipeUp = true;
-                        GearUp();
-                        Debug.Log("down");
-                    }
+                    swipeDown = true;
+                    GearDown();
+                    Debug.Log("down");
+                }
+                else
+                {
+                    swipeUp = true;
+                    GearUp();
+                    Debug.Log("up");
                 }
             }
 
