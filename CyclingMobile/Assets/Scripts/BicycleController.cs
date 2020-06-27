@@ -81,7 +81,7 @@ public class BicycleController : MonoBehaviour
             currentBoost = 0;
         }
 
-        //Debug.Log(currentBoost);
+        //Debug.Log("no dumny ty jestes z siebie czlowieku: " + currentBoost);
         if (boost == true)
         {
             currentBoost = maxBoost;
@@ -134,10 +134,8 @@ public class BicycleController : MonoBehaviour
 
             backWheel.AddTorque(-movement * speed * Time.fixedDeltaTime);
             frontWheel.AddTorque(-movement * speed * Time.fixedDeltaTime);
-            bike.AddTorque(-movement * bikeTorque * Time.fixedDeltaTime);
+            //bike.AddTorque(movement * bikeTorque * Time.fixedDeltaTime);
         }
-
-
     }
 
     private float GetVelocity()

@@ -39,6 +39,10 @@ public class Gears : MonoBehaviour
             bike.gear = 1;
             return;
         }
+        if (bike.height > bike.oldHeight)
+        {
+            bike.boost = true;
+        }
     }
 
     void GearUp()
@@ -51,7 +55,7 @@ public class Gears : MonoBehaviour
         }
         if(bike.height < bike.oldHeight)
         {
-            bike.boost = true;
+            //bike.boost = true;
         }
     }
 
