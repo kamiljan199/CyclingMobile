@@ -22,6 +22,11 @@ public class BicycleController : MonoBehaviour
 
     private float movement;
     private bool isButtonPressed;
+    public float height = 0;
+    public float oldHeight = 0;
+    private float velocity = 0;
+    public bool boost = false;
+
 
     private float energy;
     public float maxEnergy = 100.0f;
@@ -40,33 +45,50 @@ public class BicycleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        oldHeight = height;
+        height = bike.gameObject.transform.position.y;
+        velocity = GetVelocity();
+
         isButtonPressed = button.GetButtonState();
 
-        if ((isButtonPressed || Input.GetKey("right")) && energy > 0)
-        {
-            //if (movement < 1.0f)
-            //{
-            //    movement += 0.5f * gear * 0.5f;
-            //}
-            //else movement = 1.0f * gear * 0.5f;
 
-            movement = GetMovement();
-        }
-
-        else if (Input.GetKey("left"))
+        if(velocity < 300.0f)
         {
-            if (movement > -1.0f)
+            if ((isButtonPressed || Input.GetKey("right")) && energy > 0)
             {
-                movement -= 0.05f * gear * 0.5f;
+                //if (movement < 1.0f)
+                //{
+                //    movement += 0.5f * gear * 0.5f;
+                //}
+                //else movement = 1.0f * gear * 0.5f;
+
+                movement = GetMovement();
             }
-            else movement = -1.0f * gear * 0.5f;
+
+            else if (Input.GetKey("left"))
+            {
+                if (movement > -1.0f)
+                {
+                    movement -= 0.05f * gear * 0.5f;
+                }
+                else movement = -1.0f * gear * 0.5f;
+            }
+            else
+            {
+                movement = 0.0f;
+                energy += 0.2f;
+            }
+            energyBar.SetEnergy(energy);
         }
-        else
+
+        Debug.Log(boost);
+        if(boost == true)
         {
-            movement = 0.0f;
-            energy += 0.2f;
+            movement += 1.0f;
+            boost = false;
         }
-        energyBar.SetEnergy(energy);
+       
+
         //Debug.Log(GetVelocity());
     }
 

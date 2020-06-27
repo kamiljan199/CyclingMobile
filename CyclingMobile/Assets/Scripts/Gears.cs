@@ -35,14 +35,24 @@ public class Gears : MonoBehaviour
     {
         bike.gear--;
         if (bike.gear < 1)
+        {
             bike.gear = 1;
+            return;
+        }
     }
 
     void GearUp()
     {
         bike.gear++;
         if (bike.gear > 3)
+        {
             bike.gear = 3;
+            return;
+        }
+        if(bike.height < bike.oldHeight)
+        {
+            bike.boost = true;
+        }
     }
 
     public void OnClickDown ()
