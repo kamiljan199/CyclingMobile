@@ -22,11 +22,19 @@ public class BicycleController : MonoBehaviour
 
     private float movement;
     private bool isButtonPressed;
+
     public float height = 0;
     public float oldHeight = 0;
     private float velocity = 0;
     public bool boost = false;
+    private float maxBoost = 1.0f;
+    private float currentBoost = 0.0f;
+    private bool afterMovement = false;
 
+    private float boostTimeDuration = 1.0f;
+    private float afterBoostTimeDuration = 1.0f;
+    private float boostTime = -1.0f;
+    private float afterBoostTime = -2.0f;
 
     private float energy;
     public float maxEnergy = 100.0f;
@@ -51,10 +59,44 @@ public class BicycleController : MonoBehaviour
 
         isButtonPressed = button.GetButtonState();
 
+        //if (currentBoost > 0.0f)
+        //{
+        //    currentBoost -= 0.01f;
+        //}
+        //else if (currentBoost < 0.0f)
+        //{
+        //    currentBoost = 0.0f;
+        //}
 
-        if(velocity < 300.0f)
+        if(Time.time < boostTime)
         {
-            if ((isButtonPressed || Input.GetKey("right")) && energy > 0)
+            currentBoost = maxBoost;
+        }
+        else if(Time.time < afterBoostTime)
+        {
+            currentBoost = -maxBoost;
+        }
+        else
+        {
+            currentBoost = 0;
+        }
+
+        //Debug.Log(currentBoost);
+        if (boost == true)
+        {
+            currentBoost = maxBoost;
+            boostTime = Time.time + boostTimeDuration;
+            afterBoostTime = Time.time + boostTimeDuration + afterBoostTimeDuration;
+            boost = false;
+        }
+
+        if (velocity < 300.0f)
+        {
+            if(afterMovement)
+            {
+
+            }
+            else if ((isButtonPressed || Input.GetKey("right")) && energy > 0)
             {
                 //if (movement < 1.0f)
                 //{
@@ -62,9 +104,8 @@ public class BicycleController : MonoBehaviour
                 //}
                 //else movement = 1.0f * gear * 0.5f;
 
-                movement = GetMovement();
+                movement = GetMovement() + currentBoost;
             }
-
             else if (Input.GetKey("left"))
             {
                 if (movement > -1.0f)
@@ -81,14 +122,7 @@ public class BicycleController : MonoBehaviour
             energyBar.SetEnergy(energy);
         }
 
-        Debug.Log(boost);
-        if(boost == true)
-        {
-            movement += 1.0f;
-            boost = false;
-        }
-       
-
+        
         //Debug.Log(GetVelocity());
     }
 
@@ -96,6 +130,8 @@ public class BicycleController : MonoBehaviour
     {
         if (force > 0)
         {
+            Debug.Log(movement);
+
             backWheel.AddTorque(-movement * speed * Time.fixedDeltaTime);
             frontWheel.AddTorque(-movement * speed * Time.fixedDeltaTime);
             bike.AddTorque(-movement * bikeTorque * Time.fixedDeltaTime);
