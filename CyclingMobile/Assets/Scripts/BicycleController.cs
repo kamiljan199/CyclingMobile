@@ -25,7 +25,7 @@ public class BicycleController : MonoBehaviour
 
     public float height = 0;
     public float oldHeight = 0;
-    private float velocity = 0;
+    public float velocity = 0;
     public bool boost = false;
     private float maxBoost = 1.0f;
     private float currentBoost = 0.0f;
@@ -40,6 +40,7 @@ public class BicycleController : MonoBehaviour
     public float maxEnergy = 100.0f;
 
     public int gear = 1;
+    public bool boostClicked = false;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,8 @@ public class BicycleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("jak szybko zapierdalasz kolarzu?" + velocity);
+
         oldHeight = height;
         height = bike.gameObject.transform.position.y;
         velocity = GetVelocity();
@@ -82,21 +85,23 @@ public class BicycleController : MonoBehaviour
         }
 
         //Debug.Log("no dumny ty jestes z siebie czlowieku: " + currentBoost);
-        if (boost == true)
+        if (boost == true && boostClicked == true)
         {
             currentBoost = maxBoost;
             boostTime = Time.time + boostTimeDuration;
             afterBoostTime = Time.time + boostTimeDuration + afterBoostTimeDuration;
             boost = false;
+            boostClicked = false;
         }
 
         if (velocity < 300.0f)
         {
-            if(afterMovement)
+            if (afterMovement)
             {
 
             }
-            else if ((isButtonPressed || Input.GetKey("right")) && energy > 0)
+            //else if ((isButtonPressed || Input.GetKey("right")) && energy > 0)
+            else if (energy > 0)
             {
                 //if (movement < 1.0f)
                 //{
@@ -114,13 +119,21 @@ public class BicycleController : MonoBehaviour
                 }
                 else movement = -1.0f * gear * 0.5f;
             }
-            else
+            //else
+            //{
+            //movement = 0.0f;
+            //energy += 0.2f;
+            //}
+
+            //recovering energy when running downwards
+            if (bike.transform.rotation.z < 0.0f && bike.transform.rotation.z > -90.0f)
             {
-                movement = 0.0f;
                 energy += 0.2f;
             }
+
             energyBar.SetEnergy(energy);
         }
+        else velocity = 300.0f;
 
         
         //Debug.Log(GetVelocity());
@@ -226,6 +239,11 @@ public class BicycleController : MonoBehaviour
             //Application.Quit();
             SceneManager.LoadScene("LevelChoser", LoadSceneMode.Single);
         }
+    }
+
+    public void ApplyBoost()
+    {
+        boostClicked = true;
     }
 
 }
