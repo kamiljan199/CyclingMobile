@@ -239,8 +239,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97129465}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -94.8, y: 34.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.023313576, w: 0.9997282}
+  m_LocalPosition: {x: -94.811806, y: 34.531803, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 135843766}
@@ -248,7 +248,7 @@ Transform:
   - {fileID: 481368791}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.6720002}
 --- !u!114 &97129468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,9 +272,11 @@ MonoBehaviour:
   force: 100
   height: 0
   oldHeight: 0
+  velocity: 0
   boost: 0
   maxEnergy: 100
   gear: 1
+  boostClicked: 0
 --- !u!1 &117491801
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +968,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 656164782}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 97129468}
+        m_MethodName: ApplyBoost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &656164782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,7 +1023,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656164779}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4355aa9e2c0a4534eb58cfdb5c7f2ed5, type: 3}
   m_Name: 
