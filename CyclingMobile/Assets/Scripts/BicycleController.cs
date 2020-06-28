@@ -20,7 +20,7 @@ public class BicycleController : MonoBehaviour
     public float speed = 200;
     public float force = 100;
 
-    private float movement;
+    public float movement;
     private bool isButtonPressed;
 
     public float height = 0;
