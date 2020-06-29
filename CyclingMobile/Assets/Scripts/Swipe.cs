@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
-using UnityEngine.XR.WSA.Input;
+//using UnityEngine.XR.WSA.Input;
 
 public class Swipe : MonoBehaviour
 {
@@ -120,7 +120,8 @@ public class Swipe : MonoBehaviour
             bike.gear = 3;
             return;
         }
-        if (bike.height < bike.oldHeight)
+       
+        if ((bike.velocity > 95.0f && bike.velocity < 105.0f) || (bike.velocity > 195.0f && bike.velocity < 205.0f))
         {
             bike.boost = true;
         }

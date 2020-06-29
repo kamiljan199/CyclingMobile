@@ -14,6 +14,7 @@ public class BicycleController : MonoBehaviour
     private Rigidbody2D rb;
 
     public GameObject endText;
+    public GameObject boostParticle;
 
 
     public float bikeTorque = 20;
@@ -27,7 +28,7 @@ public class BicycleController : MonoBehaviour
     public float oldHeight = 0;
     public float velocity = 0;
     public bool boost = false;
-    private float maxBoost = 1.0f;
+    private float maxBoost = 3.0f;
     private float currentBoost = 0.0f;
     private bool afterMovement = false;
 
@@ -54,7 +55,7 @@ public class BicycleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("jak szybko zapierdalasz kolarzu?" + velocity);
+       // Debug.Log("jak szybko zapierdalasz kolarzu?" + velocity);
 
         oldHeight = height;
         height = bike.gameObject.transform.position.y;
@@ -71,30 +72,41 @@ public class BicycleController : MonoBehaviour
         //    currentBoost = 0.0f;
         //}
 
-        if(Time.time < boostTime)
-        {
-            currentBoost = maxBoost;
-        }
-        else if(Time.time < afterBoostTime)
-        {
-            currentBoost = -maxBoost;
-        }
-        else
-        {
-            currentBoost = 0;
-        }
+        //if(Time.time < boostTime)
+        //{
+        //    currentBoost = maxBoost;
+        //}
+        //else if(Time.time < afterBoostTime)
+        //{
+        //    currentBoost = -maxBoost;
+        //}
+        //else
+        //{
+        //    currentBoost = 0;
+        //}
 
         //Debug.Log("no dumny ty jestes z siebie czlowieku: " + currentBoost);
-        if (boost == true && boostClicked == true)
+        if ( boostClicked == true)
         {
+            Debug.Log("BOOOST");
+
             currentBoost = maxBoost;
             boostTime = Time.time + boostTimeDuration;
-            afterBoostTime = Time.time + boostTimeDuration + afterBoostTimeDuration;
-            boost = false;
+            //afterBoostTime = Time.time + boostTimeDuration + afterBoostTimeDuration;
+            boostParticle.SetActive(true);
+            //boostParticle.GetComponent<BoostParticle>().StartParticles();
+
+            //boost = false;
             boostClicked = false;
+            AddEnergy(-1.0f);
+        }
+        else if(Time.time > boostTime)
+        {
+            boostParticle.SetActive(false);
+            //boostParticle.GetComponent<BoostParticle>().StopParticles();
         }
 
-        if (velocity < 300.0f)
+        if (velocity < 250.0f)
         {
             if (afterMovement)
             {
@@ -125,17 +137,26 @@ public class BicycleController : MonoBehaviour
             //energy += 0.2f;
             //}
 
-            //recovering energy when running downwards
-            if (bike.transform.rotation.z < 0.0f && bike.transform.rotation.z > -90.0f)
-            {
-                energy += 0.2f;
-            }
-
-            energyBar.SetEnergy(energy);
         }
-        else velocity = 300.0f;
+        else if(velocity > 300.0f)
+        {
+            velocity = 300.0f;
+            movement = 0.0f;
+        }
+        else
+        {
+            movement = 0.0f;
+        }
 
-        
+        //recovering energy when running downwards
+        if (bike.transform.rotation.z < 0.0f && bike.transform.rotation.z > -90.0f)
+        {
+            AddEnergy(0.02f);
+        }
+
+        currentBoost = 0.0f;
+        energyBar.SetEnergy(energy);
+
         //Debug.Log(GetVelocity());
     }
 
@@ -162,54 +183,54 @@ public class BicycleController : MonoBehaviour
         {
             if(GetVelocity() < 100.0f)
             {
-                AddEnergy(-0.1f);
-                return 0.6f;
+                //AddEnergy(-0.1f);
+                return 0.3f;
             }
             else if (GetVelocity() < 200.0f && GetVelocity() > 100.0f)
             {
-                AddEnergy(-0.05f);
-                return 0.2f;
+                //AddEnergy(-0.05f);
+                return 0.1f;
             }
             else 
             {
-                AddEnergy(-0.01f);
-                return 0.01f;
+                //AddEnergy(-0.01f);
+                return 0.005f;
             }
         }
         else if(gear == 2)
         {
             if (GetVelocity() < 100.0f)
             {
-                AddEnergy(-0.2f);
-                return 0.3f;
+                //AddEnergy(-0.2f);
+                return 0.15f;
             }
             else if (GetVelocity() < 200.0f && GetVelocity() > 100.0f)
             {
-                AddEnergy(-0.1f);
-                return 0.4f;
+                //AddEnergy(-0.1f);
+                return 0.2f;
             }
             else
             {
-                AddEnergy(-0.05f);
-                return 0.05f;
+                //AddEnergy(-0.05f);
+                return 0.025f;
             }
         }
         else
         {
             if (GetVelocity() < 100.0f)
             {
-                AddEnergy(-0.5f);
-                return 0.1f;
+                //AddEnergy(-0.5f);
+                return 0.05f;
             }
             else if (GetVelocity() < 200.0f && GetVelocity() > 100.0f)
             {
-                AddEnergy(-0.2f);
-                return 0.1f;
+                //AddEnergy(-0.2f);
+                return 0.05f;
             }
             else
             {
-                AddEnergy(-0.05f);
-                return 0.1f;
+                //AddEnergy(-0.05f);
+                return 0.05f;
             }
         }
     }
