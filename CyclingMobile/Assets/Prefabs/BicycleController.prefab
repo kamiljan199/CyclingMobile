@@ -10053,6 +10053,7 @@ MonoBehaviour:
   maxEnergy: 100
   gear: 1
   boostClicked: 0
+  animator: {fileID: 693096242720519532}
 --- !u!1 &693096242720519534
 GameObject:
   m_ObjectHideFlags: 0
@@ -10095,7 +10096,7 @@ Animator:
   m_GameObject: {fileID: 693096242720519534}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 05acd611bcb64fb42ad5a9031bde475c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 996faec705f058d45a88359a6813376e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -10146,7 +10147,7 @@ Animator:
   m_GameObject: {fileID: 693096242821579727}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e74c69a777cd6a54eb1cbc67b657085e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 996faec705f058d45a88359a6813376e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

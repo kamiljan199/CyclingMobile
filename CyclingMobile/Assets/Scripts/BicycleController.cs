@@ -43,6 +43,8 @@ public class BicycleController : MonoBehaviour
     public int gear = 1;
     public bool boostClicked = false;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -122,6 +124,8 @@ public class BicycleController : MonoBehaviour
                 //else movement = 1.0f * gear * 0.5f;
 
                 movement = GetMovement() + currentBoost;
+
+                //animator.SetBool("moving", true);
             }
             else if (Input.GetKey("left"))
             {
@@ -152,7 +156,9 @@ public class BicycleController : MonoBehaviour
         if (bike.transform.rotation.z < 0.0f && bike.transform.rotation.z > -90.0f)
         {
             AddEnergy(0.02f);
+            animator.SetBool("moving", false);
         }
+        else animator.SetBool("moving", true);
 
         currentBoost = 0.0f;
         energyBar.SetEnergy(energy);
