@@ -15,6 +15,7 @@ public class BicycleController : MonoBehaviour
 
     public GameObject endText;
     public GameObject boostParticle;
+    public GameObject confettiParticle;
 
 
     public float bikeTorque = 20;
@@ -308,6 +309,10 @@ public class BicycleController : MonoBehaviour
     public void ApplyBoost()
     {
         boostClicked = true;
+        if((velocity > 90 && velocity <110) || (velocity > 190 && velocity<210))
+        {
+            Instantiate(confettiParticle, transform);
+        }
     }
 
 }
