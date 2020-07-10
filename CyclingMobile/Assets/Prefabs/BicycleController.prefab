@@ -10042,6 +10042,8 @@ MonoBehaviour:
   bike: {fileID: 693096242075984179}
   endText: {fileID: 0}
   boostParticle: {fileID: 0}
+  confettiParticle: {fileID: 589111667145093917, guid: 77ad45b8f3ec57b488856dcac32bc2b4,
+    type: 3}
   bikeTorque: 20
   speed: 200
   force: 100
