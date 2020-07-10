@@ -32,7 +32,7 @@ public class BicycleController : MonoBehaviour
     private float currentBoost = 0.0f;
     private bool afterMovement = false;
 
-    private float boostTimeDuration = 1.0f;
+    private float boostTimeDuration = 1f;
     private float afterBoostTimeDuration = 1.0f;
     private float boostTime = -1.0f;
     private float afterBoostTime = -2.0f;
