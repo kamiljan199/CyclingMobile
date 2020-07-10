@@ -278,8 +278,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1569627075}
   m_HandleRect: {fileID: 1569627074}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.89887416
+  m_Value: -1.2550269
+  m_Size: 0.5919836
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1604,7 +1604,7 @@ GameObject:
   - component: {fileID: 1888840404}
   - component: {fileID: 1888840403}
   m_Layer: 0
-  m_Name: SandNumberText
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1863,7 +1863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -960, y: 541.50006}
+  m_AnchoredPosition: {x: -688.9142, y: 541.50006}
   m_SizeDelta: {x: 0, y: 1080}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2091125380

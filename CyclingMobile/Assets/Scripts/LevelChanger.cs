@@ -33,14 +33,17 @@ public class LevelChanger : MonoBehaviour
     {
         if (nameOfLevel == "Sand") {
             numberOfLevelText.text = levelBeaten.GetComponent<LevelInformations>().sandNumber.ToString();
+            numberOfLevel = levelBeaten.GetComponent<LevelInformations>().sandNumber;
         }
         if (nameOfLevel == "Grass")
         {
             numberOfLevelText.text = levelBeaten.GetComponent<LevelInformations>().grassNumber.ToString();
+            numberOfLevel = levelBeaten.GetComponent<LevelInformations>().grassNumber;
         }
         if (nameOfLevel == "Asphalt")
         {
             numberOfLevelText.text = levelBeaten.GetComponent<LevelInformations>().asphaltNumber.ToString();
+            numberOfLevel = levelBeaten.GetComponent<LevelInformations>().asphaltNumber;
         }
     }
 
