@@ -42,10 +42,12 @@ public class BicycleController : MonoBehaviour
 
     public int gear = 1;
     public bool boostClicked = false;
+    GameObject levelBeaten;
 
     // Start is called before the first frame update
     void Start()
     {
+        levelBeaten = GameObject.Find("LevelBeaten");
         rb = gameObject.GetComponent<Rigidbody2D>();
         movement = 0.0f;
         energy = maxEnergy;
@@ -284,6 +286,18 @@ public class BicycleController : MonoBehaviour
         }
         if (collision.CompareTag("End"))
         {
+            if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Sand")
+            {
+                levelBeaten.GetComponent<LevelInformations>().sandNumber++;
+            }
+            if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Grass")
+            {
+                levelBeaten.GetComponent<LevelInformations>().grassNumber++;
+            }
+            if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Asphalt")
+            {
+                levelBeaten.GetComponent<LevelInformations>().asphaltNumber++;
+            }
             Debug.Log("el");
             endText.SetActive(true);
             //Application.Quit();
