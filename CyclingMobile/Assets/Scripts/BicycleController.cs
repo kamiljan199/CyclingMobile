@@ -55,7 +55,7 @@ public class BicycleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Debug.Log("jak szybko zapierdalasz kolarzu?" + velocity);
+        //Debug.Log("jak szybko zapierdalasz kolarzu?" + velocity);
 
         oldHeight = height;
         height = bike.gameObject.transform.position.y;
@@ -179,58 +179,87 @@ public class BicycleController : MonoBehaviour
 
     private float GetMovement()
     {
-        if(gear == 1)
+        float x;
+
+        if (gear == 1)
         {
-            if(GetVelocity() < 100.0f)
+            if(GetVelocity() <= 100.0f)
             {
                 //AddEnergy(-0.1f);
-                return 0.3f;
+                //velocity change 0.0 -> 0.(3)
+                x = GetVelocity() / 300.0f;
+                return x;
+                //return 0.3f;
             }
-            else if (GetVelocity() < 200.0f && GetVelocity() > 100.0f)
+            else if (GetVelocity() <= 200.0f && GetVelocity() > 100.0f)
             {
                 //AddEnergy(-0.05f);
-                return 0.1f;
+                //velocity change 0.3 -> 0.1
+                x = 0.5f - (GetVelocity()) / 500.0f;
+                return x;
+                //return 0.1f;
             }
             else 
             {
                 //AddEnergy(-0.01f);
-                return 0.005f;
+                //velocity change 0.1005 -> 0.005
+                x = 0.3005f - (GetVelocity()) / 1000.0f; 
+                return x;
+                //return 0.005f;
             }
         }
         else if(gear == 2)
         {
-            if (GetVelocity() < 100.0f)
+            if (GetVelocity() <= 100.0f)
             {
                 //AddEnergy(-0.2f);
-                return 0.15f;
+                //velocity change 0.0 -> 0.15
+                x = GetVelocity()*3 / 2000.0f;
+                return x;
+                //return 0.15f;
             }
-            else if (GetVelocity() < 200.0f && GetVelocity() > 100.0f)
+            else if (GetVelocity() <= 200.0f && GetVelocity() > 100.0f)
             {
                 //AddEnergy(-0.1f);
-                return 0.2f;
+                //velocity change 0.16.67 -> 0.204
+                x = 0.13f + GetVelocity() / 2700.0f;
+                return x;
+                //return 0.2f;
             }
             else
             {
                 //AddEnergy(-0.05f);
-                return 0.025f;
+                //velocity change 0.2025 -> 0.0025
+                x = 0.6025f - (GetVelocity()) / 500.0f;
+                return x;
+                //return 0.025f;
             }
         }
         else
         {
-            if (GetVelocity() < 100.0f)
+            if (GetVelocity() <= 100.0f)
             {
                 //AddEnergy(-0.5f);
-                return 0.05f;
+                //velocity change 0.0 -> 0.05
+                x = GetVelocity() / 2000.0f;
+                return x;
+                //return 0.05f;
             }
-            else if (GetVelocity() < 200.0f && GetVelocity() > 100.0f)
+            else if (GetVelocity() <= 200.0f && GetVelocity() > 100.0f)
             {
                 //AddEnergy(-0.2f);
-                return 0.05f;
+                //velocity change 0.05 -> 0.1
+                x = GetVelocity() / 2000.0f;
+                return x;
+                //return 0.1f;
             }
             else
             {
                 //AddEnergy(-0.05f);
-                return 0.05f;
+                //velocity change 0.1 -> 0.2
+                x = GetVelocity() / 1000.0f - 0.1f;
+                return x;
+                //return 0.2f;
             }
         }
     }
