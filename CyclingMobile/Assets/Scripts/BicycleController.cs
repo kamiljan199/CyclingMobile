@@ -29,7 +29,7 @@ public class BicycleController : MonoBehaviour
     public float oldHeight = 0;
     public float velocity = 0;
     public bool boost = false;
-    private float maxBoost = 3.0f;
+    private float maxBoost = 4.0f;
     private float currentBoost = 0.0f;
     private bool afterMovement = false;
 
