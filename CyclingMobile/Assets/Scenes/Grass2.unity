@@ -336,6 +336,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6547241477518554557, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547241477518554557, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887250389082926699, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: flag
+      value: 
+      objectReference: {fileID: 1448369625}
+    - target: {fileID: 4887250389082926699, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: bike
+      value: 
+      objectReference: {fileID: 1173026721}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8b9a271d97f8f441b3c33a3655b76ef, type: 3}
 --- !u!114 &907580077 stripped
@@ -1242,6 +1262,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6637985660589314517, guid: 9f2f91f56b36f9140a71b1512ab58892, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9f2f91f56b36f9140a71b1512ab58892, type: 3}
+--- !u!4 &1448369625 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4911065465257096274, guid: 9f2f91f56b36f9140a71b1512ab58892,
+    type: 3}
+  m_PrefabInstance: {fileID: 1448369624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1844113422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,11 +1393,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1173026721}
-    - target: {fileID: 9071749139383685164, guid: 735c7785e4c9df64099df98d7253fede,
-        type: 3}
-      propertyPath: m_SortingFudge
-      value: -100
-      objectReference: {fileID: 0}
     - target: {fileID: 3269370488951703886, guid: 735c7785e4c9df64099df98d7253fede,
         type: 3}
       propertyPath: prewarm
@@ -1386,6 +1407,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.size3D
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071749139383685164, guid: 735c7785e4c9df64099df98d7253fede,
+        type: 3}
+      propertyPath: m_SortingFudge
+      value: -100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 735c7785e4c9df64099df98d7253fede, type: 3}
