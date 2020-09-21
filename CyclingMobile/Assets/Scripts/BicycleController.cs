@@ -53,6 +53,8 @@ public class BicycleController : MonoBehaviour
         movement = 0.0f;
         energy = maxEnergy;
         energyBar.SetMaxEnergy(maxEnergy);
+
+        FindObjectOfType<AudioManager>().Play("bike1");
     }
 
     // Update is called once per frame
@@ -283,10 +285,14 @@ public class BicycleController : MonoBehaviour
         if(collision.CompareTag("EnergyDrink"))
         {
             AddEnergy(50.0f);
+            FindObjectOfType<AudioManager>().Play("drink");
+
             Destroy(collision.gameObject);
         }
         if (collision.CompareTag("End"))
         {
+            FindObjectOfType<AudioManager>().Stop("bike1");
+
             if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Sand")
             {
                 levelBeaten.GetComponent<LevelInformations>().sandNumber++;
@@ -309,7 +315,9 @@ public class BicycleController : MonoBehaviour
     public void ApplyBoost()
     {
         boostClicked = true;
-        if((velocity > 90 && velocity <110) || (velocity > 190 && velocity<210))
+        FindObjectOfType<AudioManager>().Play("tap");
+
+        if ((velocity > 90 && velocity <110) || (velocity > 190 && velocity<210))
         {
             Instantiate(confettiParticle, transform);
         }
