@@ -1374,6 +1374,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: BicycleController
       objectReference: {fileID: 0}
+    - target: {fileID: 4973673795548678154, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545628727333542200, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545628727333542200, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 6373669123759161205, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024808470572744368, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
         type: 3}
       propertyPath: button
@@ -1449,10 +1474,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3616236213296981793, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5844765051024963354, guid: 44d9e498bf9922f41bc898c117aad524,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5844765051024963354, guid: 44d9e498bf9922f41bc898c117aad524,
         type: 3}
@@ -1494,35 +1524,10 @@ PrefabInstance:
       propertyPath: particles.Array.data[4]
       value: 
       objectReference: {fileID: 1812434237}
-    - target: {fileID: 3545628727333542200, guid: 44d9e498bf9922f41bc898c117aad524,
+    - target: {fileID: 693096243136966189, guid: 44d9e498bf9922f41bc898c117aad524,
         type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3545628727333542200, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 2.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 4973673795548678154, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3024808470572744368, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3616236213296981793, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6373669123759161205, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44d9e498bf9922f41bc898c117aad524, type: 3}
@@ -1613,6 +1618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214520967613723970, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9214520967885862064, guid: a8b9a271d97f8f441b3c33a3655b76ef,
         type: 3}
@@ -1739,11 +1749,6 @@ PrefabInstance:
       propertyPath: bike
       value: 
       objectReference: {fileID: 1369815560}
-    - target: {fileID: 9214520967613723970, guid: a8b9a271d97f8f441b3c33a3655b76ef,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9214520966647215291, guid: a8b9a271d97f8f441b3c33a3655b76ef,
         type: 3}
       propertyPath: m_IsActive
@@ -1769,5 +1774,10 @@ PrefabInstance:
       propertyPath: flag
       value: 
       objectReference: {fileID: 4911065465127118634}
+    - target: {fileID: 3301659087151001311, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 426
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8b9a271d97f8f441b3c33a3655b76ef, type: 3}

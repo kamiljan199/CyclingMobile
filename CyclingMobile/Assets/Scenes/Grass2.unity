@@ -331,11 +331,6 @@ PrefabInstance:
       propertyPath: bike
       value: 
       objectReference: {fileID: 1173026719}
-    - target: {fileID: 9214520967811821624, guid: a8b9a271d97f8f441b3c33a3655b76ef,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6547241477518554557, guid: a8b9a271d97f8f441b3c33a3655b76ef,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -356,6 +351,16 @@ PrefabInstance:
       propertyPath: bike
       value: 
       objectReference: {fileID: 1173026721}
+    - target: {fileID: 3301659087151001311, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 438
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214520967811821624, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8b9a271d97f8f441b3c33a3655b76ef, type: 3}
 --- !u!114 &907580077 stripped
@@ -1393,6 +1398,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1173026721}
+    - target: {fileID: 9071749139383685164, guid: 735c7785e4c9df64099df98d7253fede,
+        type: 3}
+      propertyPath: m_SortingFudge
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 3269370488951703886, guid: 735c7785e4c9df64099df98d7253fede,
         type: 3}
       propertyPath: prewarm
@@ -1407,11 +1417,6 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.size3D
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071749139383685164, guid: 735c7785e4c9df64099df98d7253fede,
-        type: 3}
-      propertyPath: m_SortingFudge
-      value: -100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 735c7785e4c9df64099df98d7253fede, type: 3}
