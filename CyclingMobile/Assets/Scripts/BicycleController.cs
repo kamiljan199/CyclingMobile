@@ -291,7 +291,7 @@ public class BicycleController : MonoBehaviour
         }
         if (collision.CompareTag("End"))
         {
-            FindObjectOfType<AudioManager>().Stop("bike1");
+            //FindObjectOfType<AudioManager>().Stop("bike1");
 
             if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Sand")
             {
