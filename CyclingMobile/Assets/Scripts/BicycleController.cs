@@ -285,7 +285,7 @@ public class BicycleController : MonoBehaviour
         if(collision.CompareTag("EnergyDrink"))
         {
             AddEnergy(50.0f);
-            FindObjectOfType<AudioManager>().Play("drink");
+            //FindObjectOfType<AudioManager>().Play("drink");
 
             Destroy(collision.gameObject);
         }
