@@ -54,7 +54,7 @@ public class BicycleController : MonoBehaviour
         energy = maxEnergy;
         energyBar.SetMaxEnergy(maxEnergy);
 
-        FindObjectOfType<AudioManager>().Play("bike1");
+        //FindObjectOfType<AudioManager>().Play("bike1.wav");
     }
 
     // Update is called once per frame
@@ -285,7 +285,7 @@ public class BicycleController : MonoBehaviour
         if(collision.CompareTag("EnergyDrink"))
         {
             AddEnergy(50.0f);
-            FindObjectOfType<AudioManager>().Play("drink");
+            //FindObjectOfType<AudioManager>().Play("drink");
 
             Destroy(collision.gameObject);
         }
@@ -315,7 +315,7 @@ public class BicycleController : MonoBehaviour
     public void ApplyBoost()
     {
         boostClicked = true;
-        FindObjectOfType<AudioManager>().Play("tap");
+        //FindObjectOfType<AudioManager>().Play("tap.ogg");
 
         if ((velocity > 90 && velocity <110) || (velocity > 190 && velocity<210))
         {
