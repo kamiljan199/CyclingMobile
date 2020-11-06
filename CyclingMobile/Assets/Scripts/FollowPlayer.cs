@@ -6,6 +6,7 @@ public class FollowPlayer : MonoBehaviour
 {
     public Transform target;
     private Vector3 offset;
+    private Vector3 lastTargetPosition;
 
     // Start is called before the first frame update
     void Start()
