@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BicycleController : MonoBehaviour
 {
+    public Animator animator;
     public ButtonPressed button;
     public EnergyBar energyBar;
 
@@ -45,9 +46,12 @@ public class BicycleController : MonoBehaviour
     public bool boostClicked = false;
     GameObject levelBeaten;
 
+    private int playanim = 0;
+
     // Start is called before the first frame update
     void Start()
     {
+        
         levelBeaten = GameObject.Find("LevelBeaten");
         rb = gameObject.GetComponent<Rigidbody2D>();
         movement = 0.0f;
@@ -61,7 +65,15 @@ public class BicycleController : MonoBehaviour
     void Update()
     {
         //Debug.Log("jak szybko zapierdalasz kolarzu?" + velocity);
-
+        if (animator.GetBool("pressed") == true)
+        {
+            playanim++;
+        }
+        if (playanim == 200)
+        {
+            playanim = 0;
+            animator.SetBool("pressed", false);
+        }
         oldHeight = height;
         height = bike.gameObject.transform.position.y;
         velocity = GetVelocity();
@@ -199,7 +211,7 @@ public class BicycleController : MonoBehaviour
             else if (GetVelocity() <= 200.0f && GetVelocity() > 100.0f)
             {
                 //AddEnergy(-0.05f);
-                //velocity change 0.3 -> 0.01
+                //velocity change 0.3 -> 0.1
                 x = 0.5f - (GetVelocity()) / 1000.0f;
                 return x;
                 //return 0.05f;
@@ -284,7 +296,7 @@ public class BicycleController : MonoBehaviour
     {
         if(collision.CompareTag("EnergyDrink"))
         {
-            AddEnergy(25.0f);
+            AddEnergy(50.0f);
             FindObjectOfType<AudioManager>().Play("drink");
 
             Destroy(collision.gameObject);
@@ -314,6 +326,7 @@ public class BicycleController : MonoBehaviour
 
     public void ApplyBoost()
     {
+        animator.SetBool("pressed", true);
         boostClicked = true;
         FindObjectOfType<AudioManager>().Play("tap");
 
