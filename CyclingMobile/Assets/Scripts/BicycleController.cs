@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class BicycleController : MonoBehaviour
 {
-    public Animator animator;
     public ButtonPressed button;
     public EnergyBar energyBar;
 
@@ -46,12 +45,9 @@ public class BicycleController : MonoBehaviour
     public bool boostClicked = false;
     GameObject levelBeaten;
 
-    private int playanim = 0;
-
     // Start is called before the first frame update
     void Start()
     {
-        
         levelBeaten = GameObject.Find("LevelBeaten");
         rb = gameObject.GetComponent<Rigidbody2D>();
         movement = 0.0f;
@@ -65,15 +61,7 @@ public class BicycleController : MonoBehaviour
     void Update()
     {
         //Debug.Log("jak szybko zapierdalasz kolarzu?" + velocity);
-        if (animator.GetBool("pressed") == true)
-        {
-            playanim++;
-        }
-        if (playanim == 200)
-        {
-            playanim = 0;
-            animator.SetBool("pressed", false);
-        }
+
         oldHeight = height;
         height = bike.gameObject.transform.position.y;
         velocity = GetVelocity();
@@ -326,7 +314,6 @@ public class BicycleController : MonoBehaviour
 
     public void ApplyBoost()
     {
-        animator.SetBool("pressed", true);
         boostClicked = true;
         FindObjectOfType<AudioManager>().Play("tap");
 
