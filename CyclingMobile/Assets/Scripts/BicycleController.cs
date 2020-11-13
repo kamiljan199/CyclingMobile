@@ -29,7 +29,7 @@ public class BicycleController : MonoBehaviour
     public float oldHeight = 0;
     public float velocity = 0;
     public bool boost = false;
-    private float maxBoost = 4.0f;
+    private float maxBoost = 6.0f;
     private float currentBoost = 0.0f;
     private bool afterMovement = false;
 
@@ -103,7 +103,7 @@ public class BicycleController : MonoBehaviour
 
             //boost = false;
             boostClicked = false;
-            AddEnergy(-1.0f);
+            AddEnergy(-2.5f);
         }
         else if(Time.time > boostTime)
         {
@@ -156,7 +156,7 @@ public class BicycleController : MonoBehaviour
         //recovering energy when running downwards
         if (bike.transform.rotation.z < 0.0f && bike.transform.rotation.z > -90.0f)
         {
-            AddEnergy(0.02f);
+            AddEnergy(0.005f);
         }
 
         currentBoost = 0.0f;
@@ -199,10 +199,10 @@ public class BicycleController : MonoBehaviour
             else if (GetVelocity() <= 200.0f && GetVelocity() > 100.0f)
             {
                 //AddEnergy(-0.05f);
-                //velocity change 0.3 -> 0.1
-                x = 0.5f - (GetVelocity()) / 500.0f;
+                //velocity change 0.3 -> 0.01
+                x = 0.5f - (GetVelocity()) / 1000.0f;
                 return x;
-                //return 0.1f;
+                //return 0.05f;
             }
             else 
             {
@@ -219,9 +219,9 @@ public class BicycleController : MonoBehaviour
             {
                 //AddEnergy(-0.2f);
                 //velocity change 0.0 -> 0.15
-                x = GetVelocity()*3 / 2000.0f;
+                x = GetVelocity()*3 / 3000.0f;
                 return x;
-                //return 0.15f;
+                //return 0.1f;
             }
             else if (GetVelocity() <= 200.0f && GetVelocity() > 100.0f)
             {
@@ -235,9 +235,9 @@ public class BicycleController : MonoBehaviour
             {
                 //AddEnergy(-0.05f);
                 //velocity change 0.2025 -> 0.0025
-                x = 0.6025f - (GetVelocity()) / 500.0f;
+                x = 0.6025f - (GetVelocity()) / 5500.0f;
                 return x;
-                //return 0.025f;
+                //return 0.005f;
             }
         }
         else
@@ -284,7 +284,7 @@ public class BicycleController : MonoBehaviour
     {
         if(collision.CompareTag("EnergyDrink"))
         {
-            AddEnergy(50.0f);
+            AddEnergy(25.0f);
             FindObjectOfType<AudioManager>().Play("drink");
 
             Destroy(collision.gameObject);
