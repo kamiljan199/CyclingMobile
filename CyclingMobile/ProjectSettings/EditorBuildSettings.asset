@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sand2.unity
     guid: 8c72f8675a024b54b9f0d5d7b60124f6
+  - enabled: 1
+    path: Assets/Scenes/ExpShop.unity
+    guid: 86df3e37376d23042a944bdda2245b74
   m_configObjects: {}

@@ -68,6 +68,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        Vibration.Vibrate(100);
         pauseMenu.SetActive(true);
         Time.timeScale = 0.0f;
         isPaused = true;

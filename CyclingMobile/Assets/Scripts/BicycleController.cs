@@ -155,9 +155,9 @@ public class BicycleController : MonoBehaviour
             //}
 
         }
-        else if(velocity > 300.0f)
+        else if(velocity > LevelInformations.maxSpeed)
         {
-            velocity = 300.0f;
+            velocity = LevelInformations.maxSpeed;
             movement = 0.0f;
         }
         else
@@ -205,7 +205,7 @@ public class BicycleController : MonoBehaviour
                 //AddEnergy(-0.1f);
                 //velocity change 0.0 -> 0.(3)
                 x = GetVelocity() / 300.0f;
-                return x;
+                return x * LevelInformations.gearUpgrade;
                 //return 0.3f;
             }
             else if (GetVelocity() <= 200.0f && GetVelocity() > 100.0f)
@@ -213,15 +213,15 @@ public class BicycleController : MonoBehaviour
                 //AddEnergy(-0.05f);
                 //velocity change 0.3 -> 0.1
                 x = 0.5f - (GetVelocity()) / 1000.0f;
-                return x;
+                return x * LevelInformations.gearUpgrade;
                 //return 0.05f;
             }
             else 
             {
                 //AddEnergy(-0.01f);
                 //velocity change 0.1005 -> 0.005
-                x = 0.3005f - (GetVelocity()) / 1000.0f; 
-                return x;
+                x = 0.3005f - (GetVelocity()) / 1000.0f;
+                return x * LevelInformations.gearUpgrade;
                 //return 0.005f;
             }
         }
@@ -232,7 +232,7 @@ public class BicycleController : MonoBehaviour
                 //AddEnergy(-0.2f);
                 //velocity change 0.0 -> 0.15
                 x = GetVelocity()*3 / 3000.0f;
-                return x;
+                return x * LevelInformations.gearUpgrade;
                 //return 0.1f;
             }
             else if (GetVelocity() <= 200.0f && GetVelocity() > 100.0f)
@@ -240,7 +240,7 @@ public class BicycleController : MonoBehaviour
                 //AddEnergy(-0.1f);
                 //velocity change 0.16.67 -> 0.204
                 x = 0.13f + GetVelocity() / 2700.0f;
-                return x;
+                return x * LevelInformations.gearUpgrade;
                 //return 0.2f;
             }
             else
@@ -248,7 +248,7 @@ public class BicycleController : MonoBehaviour
                 //AddEnergy(-0.05f);
                 //velocity change 0.2025 -> 0.0025
                 x = 0.6025f - (GetVelocity()) / 5500.0f;
-                return x;
+                return x * LevelInformations.gearUpgrade;
                 //return 0.005f;
             }
         }
@@ -259,7 +259,7 @@ public class BicycleController : MonoBehaviour
                 //AddEnergy(-0.5f);
                 //velocity change 0.0 -> 0.05
                 x = GetVelocity() / 2000.0f;
-                return x;
+                return x * LevelInformations.gearUpgrade;
                 //return 0.05f;
             }
             else if (GetVelocity() <= 200.0f && GetVelocity() > 100.0f)
@@ -267,7 +267,7 @@ public class BicycleController : MonoBehaviour
                 //AddEnergy(-0.2f);
                 //velocity change 0.05 -> 0.1
                 x = GetVelocity() / 2000.0f;
-                return x;
+                return x * LevelInformations.gearUpgrade;
                 //return 0.1f;
             }
             else
@@ -275,7 +275,7 @@ public class BicycleController : MonoBehaviour
                 //AddEnergy(-0.05f);
                 //velocity change 0.1 -> 0.2
                 x = GetVelocity() / 1000.0f - 0.1f;
-                return x;
+                return x * LevelInformations.gearUpgrade;
                 //return 0.2f;
             }
         }
@@ -318,6 +318,7 @@ public class BicycleController : MonoBehaviour
                 levelBeaten.GetComponent<LevelInformations>().asphaltNumber++;
             }
             Debug.Log("el");
+            LevelInformations.exp += 10;
             endText.SetActive(true);
             //Application.Quit();
             SceneManager.LoadScene("LevelChoser", LoadSceneMode.Single);
@@ -332,6 +333,7 @@ public class BicycleController : MonoBehaviour
 
         if ((velocity > 90 && velocity <110) || (velocity > 190 && velocity<210))
         {
+            Vibration.Vibrate();
             Instantiate(confettiParticle, transform);
         }
     }

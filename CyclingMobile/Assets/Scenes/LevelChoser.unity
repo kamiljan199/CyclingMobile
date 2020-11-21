@@ -201,8 +201,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1569627075}
   m_HandleRect: {fileID: 1569627074}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.76486415
+  m_Value: -0.47039133
+  m_Size: 0.54228246
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1517,7 +1517,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -367, y: 540.00006}
+  m_AnchoredPosition: {x: -367, y: 539.9999}
   m_SizeDelta: {x: 584, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &836326829
@@ -1609,7 +1609,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -324, y: 540.00006}
+  m_AnchoredPosition: {x: -324, y: 539.9999}
   m_SizeDelta: {x: 612, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &951758157
@@ -2678,6 +2678,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2badd9ea1db12243b4c5883ba255db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gearLevel: 1
+  frameLevel: 1
+  tiresLevel: 1
   sandNumber: 1
   grassNumber: 1
   asphaltNumber: 1
@@ -3184,7 +3187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -959.99994, y: 541.50006}
+  m_AnchoredPosition: {x: -734.2123, y: 541.50006}
   m_SizeDelta: {x: 0, y: 1080}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2091125380
