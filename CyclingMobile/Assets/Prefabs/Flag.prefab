@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4911065465257096274}
   - component: {fileID: 4911065465257096275}
   - component: {fileID: -8291550249690490896}
+  - component: {fileID: 6821932284245579530}
   m_Layer: 0
   m_Name: Flag
   m_TagString: End
@@ -107,3 +108,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.91259766, y: 16.42575}
   m_EdgeRadius: 0
+--- !u!114 &6821932284245579530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4911065465257096273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633f6f93f73f7c2429c480be0f8b2e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grass1: 0
+  grass2: 0
+  asphalt1: 0
+  asphalt2: 0
+  sand1: 0
+  sand2: 0
