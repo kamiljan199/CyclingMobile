@@ -48,22 +48,26 @@ public class BicycleController : MonoBehaviour
 
     private int playanim = 0;
 
+    public GameObject player;
+    public GameObject flag;
+
     // Start is called before the first frame update
     void Start()
     {
-        
         levelBeaten = GameObject.Find("LevelBeaten");
         rb = gameObject.GetComponent<Rigidbody2D>();
         movement = 0.0f;
         energy = maxEnergy;
         energyBar.SetMaxEnergy(maxEnergy);
 
-        FindObjectOfType<AudioManager>().Play("bike1");
+        //FindObjectOfType<AudioManager>().Play("bike1");
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("poziom here: grass1 -> " + player.GetComponent<Player>().grass1State);
+
         //Debug.Log("jak szybko zapierdalasz kolarzu?" + velocity);
         if (animator.GetBool("pressed") == true)
         {
@@ -319,6 +323,34 @@ public class BicycleController : MonoBehaviour
             }
             Debug.Log("el");
             endText.SetActive(true);
+            
+            if (flag.GetComponent<LevelCompleted>().grass1 == true)
+            {
+                player.GetComponent<Player>().grass1State = true;
+            }
+            else if (flag.GetComponent<LevelCompleted>().grass2 == true)
+            {
+                player.GetComponent<Player>().grass2State = true;
+            }
+            else if (flag.GetComponent<LevelCompleted>().asphalt1 == true)
+            {
+                player.GetComponent<Player>().asphalt1State = true;
+            }
+            else if (flag.GetComponent<LevelCompleted>().asphalt2 == true)
+            {
+                player.GetComponent<Player>().asphalt2State = true;
+            }
+            else if (flag.GetComponent<LevelCompleted>().sand1 == true)
+            {
+                player.GetComponent<Player>().sand1State = true;
+            }
+            else if (flag.GetComponent<LevelCompleted>().sand2 == true)
+            {
+                player.GetComponent<Player>().sand2State = true;
+            }
+
+            SaveSystem.SavePlayer(player.GetComponent<Player>());
+            
             //Application.Quit();
             SceneManager.LoadScene("LevelChoser", LoadSceneMode.Single);
         }

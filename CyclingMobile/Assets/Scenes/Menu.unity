@@ -401,6 +401,7 @@ GameObject:
   - component: {fileID: 1123685470}
   - component: {fileID: 1123685469}
   - component: {fileID: 1123685468}
+  - component: {fileID: 1123685471}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -456,6 +457,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1123685471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123685467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84f23eb72f5e5146b690745d6d1859b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 0
+  grass1State: 0
+  grass2State: 0
+  asphalt1State: 0
+  asphalt2State: 0
+  sand1State: 0
+  sand2State: 0
 --- !u!1 &1791317141
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,3 +763,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90dc4fa2a44de2d48a0afbd08219f315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1123685467}
