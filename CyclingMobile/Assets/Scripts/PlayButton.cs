@@ -23,7 +23,7 @@ public class PlayButton : MonoBehaviour
 
     public void OnClickUpgrades() => SceneManager.LoadScene("ExpShop", LoadSceneMode.Single);
 
-    public void OnClickBack() => SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+    public void OnClickBack() => SceneManager.LoadScene("LevelChoser", LoadSceneMode.Single);
 
     public void OnClick()
     {
