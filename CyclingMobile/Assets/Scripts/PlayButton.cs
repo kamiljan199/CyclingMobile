@@ -27,7 +27,6 @@ public class PlayButton : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("poziom here: grass1 -> " + player.GetComponent<Player>().grass1State);
         string path = Path.Combine(Application.persistentDataPath, "s1.eo");
         if (File.Exists(path) == false)
         {
@@ -47,6 +46,7 @@ public class PlayButton : MonoBehaviour
             Debug.Log("Save wczytany pomyslnie.");
         }
 
+        Debug.Log("goldzik -> " + player.GetComponent<Player>().gold);
         SceneManager.LoadScene("LevelChoser", LoadSceneMode.Single);
     }
 }

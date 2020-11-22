@@ -60,13 +60,23 @@ public class BicycleController : MonoBehaviour
         energy = maxEnergy;
         energyBar.SetMaxEnergy(maxEnergy);
 
-        //FindObjectOfType<AudioManager>().Play("bike1");
+        FindObjectOfType<AudioManager>().Play("bike1");
+
+        PlayerData data = SaveSystem.LoadPlayer();
+        player.GetComponent<Player>().gold = data.gold;
+        player.GetComponent<Player>().grass1State = data.grass1;
+        player.GetComponent<Player>().grass2State = data.grass2;
+        player.GetComponent<Player>().asphalt1State = data.asphalt1;
+        player.GetComponent<Player>().asphalt2State = data.asphalt2;
+        player.GetComponent<Player>().sand1State = data.sand1;
+        player.GetComponent<Player>().sand2State = data.sand2;
+        Debug.Log("Save wczytany pomyslnie.");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("poziom here: grass1 -> " + player.GetComponent<Player>().grass1State);
+        //Debug.Log("goldzik: " + player.GetComponent<Player>().gold);
 
         //Debug.Log("jak szybko zapierdalasz kolarzu?" + velocity);
         if (animator.GetBool("pressed") == true)
@@ -303,6 +313,11 @@ public class BicycleController : MonoBehaviour
             AddEnergy(50.0f);
             FindObjectOfType<AudioManager>().Play("drink");
 
+            Destroy(collision.gameObject);
+        }
+        if (collision.CompareTag("Coin"))
+        {
+            player.GetComponent<Player>().gold += 1;
             Destroy(collision.gameObject);
         }
         if (collision.CompareTag("End"))
