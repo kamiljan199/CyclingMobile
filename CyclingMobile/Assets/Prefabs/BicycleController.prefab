@@ -9897,6 +9897,7 @@ GameObject:
   - component: {fileID: 693096242075984178}
   - component: {fileID: 3437383571862100202}
   - component: {fileID: 3096805579735746021}
+  - component: {fileID: 1084077868120302496}
   m_Layer: 0
   m_Name: BicycleController
   m_TagString: Untagged
@@ -9955,6 +9956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7964cfd1d55db4a4d8b29b766f4b14c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   button: {fileID: 0}
   energyBar: {fileID: 0}
   backWheel: {fileID: 693096241988100648}
@@ -9975,6 +9977,8 @@ MonoBehaviour:
   maxEnergy: 100
   gear: 1
   boostClicked: 0
+  player: {fileID: 0}
+  flag: {fileID: 0}
 --- !u!95 &3437383571862100202
 Animator:
   serializedVersion: 3
@@ -10043,6 +10047,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!61 &1084077868120302496
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693096242075984189}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.24, y: 10.24}
+    newSize: {x: 10.24, y: 10.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.24, y: 10.24}
+  m_EdgeRadius: 0
 --- !u!1 &693096243136966184
 GameObject:
   m_ObjectHideFlags: 0
