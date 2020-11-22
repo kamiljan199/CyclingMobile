@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EnergyDrink
   - End
+  - Coin
   layers:
   - Default
   - TransparentFX
