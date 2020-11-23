@@ -13,6 +13,12 @@ public class PlayerData
     public bool asphalt2;
     public bool sand1;
     public bool sand2;
+    public bool skin0;
+    public bool skin1;
+    public bool skin2;
+    public bool skin3;
+    public bool skin4;
+    public bool skin5;
 
     public PlayerData(Player bc)
     {
@@ -25,6 +31,12 @@ public class PlayerData
         asphalt2 = bc.asphalt2State;
         sand1 = bc.sand1State;
         sand2 = bc.sand2State;
+        skin0 = bc.skin0;
+        skin1 = bc.skin1;
+        skin2 = bc.skin2;
+        skin3 = bc.skin3;
+        skin4 = bc.skin4;
+        skin5 = bc.skin5;
     }
 
 

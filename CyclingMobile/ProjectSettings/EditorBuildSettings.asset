@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ExpShop.unity
     guid: 86df3e37376d23042a944bdda2245b74
+  - enabled: 1
+    path: Assets/Scenes/ItemShop.unity
+    guid: f3a8f50b81df10e48a8e3dd8ffe91963
   m_configObjects: {}

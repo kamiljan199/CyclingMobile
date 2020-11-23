@@ -21,9 +21,23 @@ public class PlayButton : MonoBehaviour
         
     }
 
-    public void OnClickUpgrades() => SceneManager.LoadScene("ExpShop", LoadSceneMode.Single);
+    public void OnClickUpgrades()
+    {
+        LoadSave();
+        SceneManager.LoadScene("ExpShop", LoadSceneMode.Single);
+    }
 
-    public void OnClickBack() => SceneManager.LoadScene("LevelChoser", LoadSceneMode.Single);
+    public void OnClickShop()
+    {
+        LoadSave();
+        SceneManager.LoadScene("ItemShop", LoadSceneMode.Single);
+    }
+
+    public void OnClickBack() 
+    {
+        LoadSave();
+        SceneManager.LoadScene("LevelChoser", LoadSceneMode.Single); 
+    }
 
     public void OnClick()
     {
@@ -35,18 +49,29 @@ public class PlayButton : MonoBehaviour
         }
         else
         {
-            PlayerData data = SaveSystem.LoadPlayer();
-            player.GetComponent<Player>().gold = data.gold;
-            player.GetComponent<Player>().grass1State = data.grass1;
-            player.GetComponent<Player>().grass2State = data.grass2;
-            player.GetComponent<Player>().asphalt1State = data.asphalt1;
-            player.GetComponent<Player>().asphalt2State = data.asphalt2;
-            player.GetComponent<Player>().sand1State = data.sand1;
-            player.GetComponent<Player>().sand2State = data.sand2;
-            Debug.Log("Save wczytany pomyslnie.");
+            LoadSave();
         }
 
         Debug.Log("goldzik -> " + player.GetComponent<Player>().gold);
         SceneManager.LoadScene("LevelChoser", LoadSceneMode.Single);
+    }
+
+    public void LoadSave()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        player.GetComponent<Player>().gold = data.gold;
+        player.GetComponent<Player>().grass1State = data.grass1;
+        player.GetComponent<Player>().grass2State = data.grass2;
+        player.GetComponent<Player>().asphalt1State = data.asphalt1;
+        player.GetComponent<Player>().asphalt2State = data.asphalt2;
+        player.GetComponent<Player>().sand1State = data.sand1;
+        player.GetComponent<Player>().sand2State = data.sand2;
+        player.GetComponent<Player>().skin0 = data.skin0;
+        player.GetComponent<Player>().skin1 = data.skin1;
+        player.GetComponent<Player>().skin2 = data.skin2;
+        player.GetComponent<Player>().skin3 = data.skin3;
+        player.GetComponent<Player>().skin4 = data.skin4;
+        player.GetComponent<Player>().skin5 = data.skin5;
+        Debug.Log("Save wczytany pomyslnie.");
     }
 }
