@@ -35,7 +35,8 @@ public class PlayButton : MonoBehaviour
 
     public void OnClickBack() 
     {
-        LoadSave();
+        //LoadSave();
+        SaveSystem.SavePlayer(player.GetComponent<Player>());
         SceneManager.LoadScene("LevelChoser", LoadSceneMode.Single); 
     }
 
