@@ -150,13 +150,13 @@ public class Shop : MonoBehaviour
 
     public void OwnedSkins()
     {
-        if (skin0 == true && player.GetComponent<Player>().skin0 == true)
+        if (skin0 == true) //&& player.GetComponent<Player>().skin0 == true)
         {
             HideBuyButton();
             ShowSetButton();
             ownedText.gameObject.SetActive(true);
-            //player.GetComponent<Player>().skin0 = true;
-            //SaveSystem.SavePlayer(player.GetComponent<Player>());
+            player.GetComponent<Player>().skin0 = true;
+            SaveSystem.SavePlayer(player.GetComponent<Player>());
         }
         else if (skin1 == true && player.GetComponent<Player>().skin1 == true)
         {
