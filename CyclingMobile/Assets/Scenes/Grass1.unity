@@ -439,32 +439,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 693096243445717818}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &385606135
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 385606131}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
-    newSize: {x: 10.24, y: 10.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 10.24, y: 10.24}
-  m_EdgeRadius: 0
 --- !u!4 &394722254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8853027186670103299, guid: 84f75f36e52e07f40bed0125915375c3,
@@ -1559,6 +1533,12 @@ MonoBehaviour:
   asphalt2State: 0
   sand1State: 0
   sand2State: 0
+  skin0: 0
+  skin1: 0
+  skin2: 0
+  skin3: 0
+  skin4: 0
+  skin5: 0
 --- !u!114 &1369815560 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,

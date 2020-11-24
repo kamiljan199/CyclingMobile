@@ -304,12 +304,13 @@ public class BicycleController : MonoBehaviour
         {
             AddEnergy(50.0f);
             FindObjectOfType<AudioManager>().Play("drink");
-
+            Debug.Log("EnergyDrink collected.");
             Destroy(collision.gameObject);
         }
         if (collision.CompareTag("Coin"))
         {
             player.GetComponent<Player>().gold += 1;
+            Debug.Log("Coin collected.");
             Destroy(collision.gameObject);
         }
         if (collision.CompareTag("End"))
