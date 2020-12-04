@@ -6,33 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/Menus/Menu.unity
     guid: c9a8c2318f8c44b4d8e950b7b09c2439
   - enabled: 1
-    path: Assets/Scenes/LevelChoser.unity
+    path: Assets/Scenes/Menus/LevelChoser.unity
     guid: 4ec0a8535a7d8cd468ef8180ff93d920
   - enabled: 1
-    path: Assets/Scenes/Grass1.unity
+    path: Assets/Scenes/Grasses/Grass1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Asphalt1.unity
+    path: Assets/Scenes/Asphalts/Asphalt1.unity
     guid: 274048d5c35e59f45a80f8ac14699aff
   - enabled: 1
-    path: Assets/Scenes/Sand1.unity
+    path: Assets/Scenes/Sands/Sand1.unity
     guid: a5660fdc0d6bdc24fa05e2310d3d4e02
   - enabled: 1
-    path: Assets/Scenes/Grass2.unity
+    path: Assets/Scenes/Grasses/Grass2.unity
     guid: 54906cb8fac7eb148992b13a505a6e11
   - enabled: 1
-    path: Assets/Scenes/Asphalt2.unity
+    path: Assets/Scenes/Asphalts/Asphalt2.unity
     guid: 0ea6428a840bc1f4dac47a7db8e9d0e7
   - enabled: 1
-    path: Assets/Scenes/Sand2.unity
+    path: Assets/Scenes/Sands/Sand2.unity
     guid: 8c72f8675a024b54b9f0d5d7b60124f6
   - enabled: 1
-    path: Assets/Scenes/ExpShop.unity
+    path: Assets/Scenes/Menus/ExpShop.unity
     guid: 86df3e37376d23042a944bdda2245b74
   - enabled: 1
-    path: Assets/Scenes/ItemShop.unity
+    path: Assets/Scenes/Menus/ItemShop.unity
     guid: f3a8f50b81df10e48a8e3dd8ffe91963
   m_configObjects: {}
