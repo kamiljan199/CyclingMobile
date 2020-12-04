@@ -10,6 +10,11 @@ public class PauseMenu : MonoBehaviour
     public static bool isButtonPressed = false;
     public GameObject pauseButton;
 
+    void Start()
+    {
+        pauseMenu.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -64,6 +69,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1.0f;
         isPaused = false;
+        FindObjectOfType<AudioManager>().Play("bike1");
     }
 
     void Pause()
@@ -72,17 +78,19 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0.0f;
         isPaused = true;
+        FindObjectOfType<AudioManager>().Stop("bike1");
     }
 
     public void LoadMenu()
     {
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
+        FindObjectOfType<AudioManager>().Stop("bike1");
     }
 
     public void ExitGame()
     {
-        Debug.Log("Quitting");
+        Debug.Log("Quitting the game");
         Application.Quit();
     }
 }
