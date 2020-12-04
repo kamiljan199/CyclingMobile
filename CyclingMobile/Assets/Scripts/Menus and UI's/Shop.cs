@@ -132,10 +132,27 @@ public class Shop : MonoBehaviour
 
     public void SetButton()
     {
-        //set skin
-        Debug.Log("Not available yet.");
-        notAvailableYet.gameObject.SetActive(true);
-        Invoke("HideNotAvailableYet", 5.0f);
+        if (skin1 == true && player.GetComponent<Player>().skin1 == true)
+        {
+            player.GetComponent<Player>().skinState = 1;
+            Debug.Log(player.GetComponent<Player>().skinState);
+            SaveSystem.SavePlayer(player.GetComponent<Player>());
+        }
+        if (skin2 == true && player.GetComponent<Player>().skin2 == true)
+        {
+            player.GetComponent<Player>().skinState = 2;
+            SaveSystem.SavePlayer(player.GetComponent<Player>());
+        }
+        if (skin3 == true && player.GetComponent<Player>().skin3 == true)
+        {
+            player.GetComponent<Player>().skinState = 3;
+            SaveSystem.SavePlayer(player.GetComponent<Player>());
+        }
+        if (skin4 == true && player.GetComponent<Player>().skin4 == true)
+        {
+            player.GetComponent<Player>().skinState = 4;
+            SaveSystem.SavePlayer(player.GetComponent<Player>());
+        }
     }
 
     public void HideMissingMoney()

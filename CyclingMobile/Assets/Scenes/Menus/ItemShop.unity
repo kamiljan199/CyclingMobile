@@ -581,6 +581,7 @@ MonoBehaviour:
   ownedText: {fileID: 144885421}
   unavailable: 0
   notAvailableYet: {fileID: 927153374}
+  BicycleController: {fileID: 0}
   skin0: 0
   skin1: 0
   skin2: 0
@@ -3308,6 +3309,7 @@ MonoBehaviour:
   ownedText: {fileID: 1623829384}
   unavailable: 0
   notAvailableYet: {fileID: 927153374}
+  BicycleController: {fileID: 0}
   skin0: 0
   skin1: 1
   skin2: 0
@@ -4128,6 +4130,7 @@ MonoBehaviour:
   ownedText: {fileID: 695386461}
   unavailable: 0
   notAvailableYet: {fileID: 927153374}
+  BicycleController: {fileID: 0}
   skin0: 1
   skin1: 0
   skin2: 0
@@ -5243,6 +5246,7 @@ MonoBehaviour:
   ownedText: {fileID: 385908792}
   unavailable: 0
   notAvailableYet: {fileID: 927153374}
+  BicycleController: {fileID: 0}
   skin0: 0
   skin1: 0
   skin2: 1
@@ -5349,6 +5353,7 @@ MonoBehaviour:
   ownedText: {fileID: 85041355}
   unavailable: 1
   notAvailableYet: {fileID: 927153374}
+  BicycleController: {fileID: 0}
   skin0: 0
   skin1: 0
   skin2: 0
@@ -5455,6 +5460,7 @@ MonoBehaviour:
   ownedText: {fileID: 1357766685}
   unavailable: 0
   notAvailableYet: {fileID: 927153374}
+  BicycleController: {fileID: 0}
   skin0: 0
   skin1: 0
   skin2: 0

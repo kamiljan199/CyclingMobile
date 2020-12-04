@@ -7,6 +7,7 @@ public class PlayerData
 {
     public string profileName;
     public int gold;
+    public int skinState;
     public bool grass1;
     public bool grass2;
     public bool asphalt1;
@@ -37,6 +38,7 @@ public class PlayerData
         skin3 = bc.skin3;
         skin4 = bc.skin4;
         skin5 = bc.skin5;
+        skinState = bc.skinState;
     }
 
 

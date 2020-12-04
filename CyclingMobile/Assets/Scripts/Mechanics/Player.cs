@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     //save & load stuff
     public int gold;
+    public int skinState;
     public bool grass1State;
     public bool grass2State;
     public bool asphalt1State;
