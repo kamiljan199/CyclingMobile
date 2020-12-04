@@ -470,12 +470,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold: 0
+  skinState: 0
   grass1State: 0
   grass2State: 0
   asphalt1State: 0
   asphalt2State: 0
   sand1State: 0
   sand2State: 0
+  skin0: 0
+  skin1: 0
+  skin2: 0
+  skin3: 0
+  skin4: 0
+  skin5: 0
 --- !u!1 &1791317141
 GameObject:
   m_ObjectHideFlags: 0

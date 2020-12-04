@@ -439,6 +439,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 693096243445717818}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &385606134 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3437383571862100202, guid: 44d9e498bf9922f41bc898c117aad524,
+    type: 3}
+  m_PrefabInstance: {fileID: 693096243445717818}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &394722254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8853027186670103299, guid: 84f75f36e52e07f40bed0125915375c3,
@@ -1520,6 +1526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold: 0
+  skinState: 0
   grass1State: 0
   grass2State: 0
   asphalt1State: 0
@@ -3806,66 +3813,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BicycleController
       objectReference: {fileID: 0}
-    - target: {fileID: 4973673795548678154, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3545628727333542200, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3545628727333542200, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 2.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 6373669123759161205, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3024808470572744368, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: button
-      value: 
-      objectReference: {fileID: 950712691}
-    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: energyBar
-      value: 
-      objectReference: {fileID: 1514859226}
-    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: endText
-      value: 
-      objectReference: {fileID: 2101391720}
-    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: boostParticle
-      value: 
-      objectReference: {fileID: 1744776616}
-    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1481898119}
-    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1338741692}
-    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
-        type: 3}
-      propertyPath: flag
-      value: 
-      objectReference: {fileID: 4911065465127118635}
     - target: {fileID: 693096242075984176, guid: 44d9e498bf9922f41bc898c117aad524,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3921,10 +3868,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3616236213296981793, guid: 44d9e498bf9922f41bc898c117aad524,
+    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
         type: 3}
-      propertyPath: lengthInSec
-      value: 1
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 950712691}
+    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: energyBar
+      value: 
+      objectReference: {fileID: 1514859226}
+    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: endText
+      value: 
+      objectReference: {fileID: 2101391720}
+    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: boostParticle
+      value: 
+      objectReference: {fileID: 1744776616}
+    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1481898119}
+    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1338741692}
+    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: flag
+      value: 
+      objectReference: {fileID: 4911065465127118635}
+    - target: {fileID: 693096242075984178, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: BicycleControllerAnimator
+      value: 
+      objectReference: {fileID: 385606134}
+    - target: {fileID: 693096243136966189, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5844765051024963354, guid: 44d9e498bf9922f41bc898c117aad524,
         type: 3}
@@ -3971,10 +3958,35 @@ PrefabInstance:
       propertyPath: particles.Array.data[4]
       value: 
       objectReference: {fileID: 1812434237}
-    - target: {fileID: 693096243136966189, guid: 44d9e498bf9922f41bc898c117aad524,
+    - target: {fileID: 3545628727333542200, guid: 44d9e498bf9922f41bc898c117aad524,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 3
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545628727333542200, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973673795548678154, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024808470572744368, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616236213296981793, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6373669123759161205, guid: 44d9e498bf9922f41bc898c117aad524,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44d9e498bf9922f41bc898c117aad524, type: 3}
@@ -4163,6 +4175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214520966499541552, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 9214520967613723970, guid: a8b9a271d97f8f441b3c33a3655b76ef,
         type: 3}
@@ -4364,6 +4381,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 426
       objectReference: {fileID: 0}
+    - target: {fileID: 5819696426457410288, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9214520966964170655, guid: a8b9a271d97f8f441b3c33a3655b76ef,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -4449,6 +4471,11 @@ PrefabInstance:
       propertyPath: bike
       value: 
       objectReference: {fileID: 1369815560}
+    - target: {fileID: 9214520966460657902, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Gear state: '
+      objectReference: {fileID: 0}
     - target: {fileID: 9214520966525070511, guid: a8b9a271d97f8f441b3c33a3655b76ef,
         type: 3}
       propertyPath: m_IsActive

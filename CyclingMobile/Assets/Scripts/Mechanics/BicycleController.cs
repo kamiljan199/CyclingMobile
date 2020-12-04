@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class BicycleController : MonoBehaviour
 {
     public Animator animator;
+    public Animator BicycleControllerAnimator;
     public ButtonPressed button;
     public EnergyBar energyBar;
 
@@ -53,6 +54,7 @@ public class BicycleController : MonoBehaviour
 
     void Start()
     {
+        
         levelBeaten = GameObject.Find("LevelBeaten");
         rb = gameObject.GetComponent<Rigidbody2D>();
         movement = 0.0f;
@@ -62,11 +64,12 @@ public class BicycleController : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("bike1");
 
         LoadSave();
+        Debug.Log(player.GetComponent<Player>().skinState);
+        BicycleControllerAnimator.SetInteger("skinState", player.GetComponent<Player>().skinState);
     }
 
     void Update()
     {
-        
         if (animator.GetBool("pressed") == true)
         {
             playanim++;
@@ -318,6 +321,7 @@ public class BicycleController : MonoBehaviour
         player.GetComponent<Player>().skin3 = data.skin3;
         player.GetComponent<Player>().skin4 = data.skin4;
         player.GetComponent<Player>().skin5 = data.skin5;
+        player.GetComponent<Player>().skinState = data.skinState;
         Debug.Log("Save wczytany pomyslnie.");
     }
 
