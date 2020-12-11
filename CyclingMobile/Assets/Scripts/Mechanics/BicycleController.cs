@@ -52,6 +52,13 @@ public class BicycleController : MonoBehaviour
     public GameObject player;
     public GameObject flag;
 
+    private void Awake()
+    {
+        LoadSave();
+        Debug.Log(player.GetComponent<Player>().skinState);
+        BicycleControllerAnimator.SetInteger("skinState", player.GetComponent<Player>().skinState);
+    }
+
     void Start()
     {
         
@@ -62,10 +69,6 @@ public class BicycleController : MonoBehaviour
         energyBar.SetMaxEnergy(maxEnergy);
 
         FindObjectOfType<AudioManager>().Play("bike1");
-
-        LoadSave();
-        Debug.Log(player.GetComponent<Player>().skinState);
-        BicycleControllerAnimator.SetInteger("skinState", player.GetComponent<Player>().skinState);
     }
 
     void Update()
