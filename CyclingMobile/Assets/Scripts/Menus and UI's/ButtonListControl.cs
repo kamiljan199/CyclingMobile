@@ -24,7 +24,7 @@ public class ButtonListControl : MonoBehaviour
                 GameObject button = Instantiate(buttonTemlate) as GameObject;
                 button.SetActive(true);
 
-                button.GetComponent<ButtonListButton>().SetText("Level: Grass " + i, "Grass" + i);
+                button.GetComponent<ButtonListButton>().SetText("Grass " + i, "Grass" + i);
 
                 button.transform.SetParent(buttonTemlate.transform.parent, false);
             }
@@ -37,7 +37,7 @@ public class ButtonListControl : MonoBehaviour
                 GameObject button = Instantiate(buttonTemlate) as GameObject;
                 button.SetActive(true);
 
-                button.GetComponent<ButtonListButton>().SetText("Level: Sand " + i, "Sand" + i);
+                button.GetComponent<ButtonListButton>().SetText("Sand " + i, "Sand" + i);
 
                 button.transform.SetParent(buttonTemlate.transform.parent, false);
             }
@@ -50,7 +50,7 @@ public class ButtonListControl : MonoBehaviour
                 GameObject button = Instantiate(buttonTemlate) as GameObject;
                 button.SetActive(true);
 
-                button.GetComponent<ButtonListButton>().SetText("Level: Asphalt " + i, "Asphalt" + i);
+                button.GetComponent<ButtonListButton>().SetText("Asphalt " + i, "Asphalt" + i);
 
                 button.transform.SetParent(buttonTemlate.transform.parent, false);
             }
