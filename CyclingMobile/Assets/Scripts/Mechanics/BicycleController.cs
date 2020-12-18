@@ -52,6 +52,10 @@ public class BicycleController : MonoBehaviour
     public GameObject player;
     public GameObject flag;
 
+    private float newBikeProgress;
+    private float oldBikeProgress;
+    public bool lost;
+
     private void Awake()
     {
         LoadSave();
@@ -69,6 +73,10 @@ public class BicycleController : MonoBehaviour
         energyBar.SetMaxEnergy(maxEnergy);
 
         FindObjectOfType<AudioManager>().Play("bike1");
+
+        oldBikeProgress = this.transform.position.x / flag.transform.position.x * 100.0f;
+        newBikeProgress = oldBikeProgress;
+        lost = false;
     }
 
     void Update()
@@ -143,6 +151,17 @@ public class BicycleController : MonoBehaviour
         currentBoost = 0.0f;
         energyBar.SetEnergy(energy);
 
+        newBikeProgress = this.transform.position.x / flag.transform.position.x * 100.0f;
+        if (newBikeProgress >= oldBikeProgress)
+        {
+            Debug.Log("NICE!");
+            oldBikeProgress = newBikeProgress;
+        }
+        else if (newBikeProgress < oldBikeProgress - 5.0f)
+        {
+            Debug.Log("LOST YOU SUCKER!");
+            lost = true;
+        }
     }
 
     private void FixedUpdate()
