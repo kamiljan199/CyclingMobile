@@ -159,7 +159,7 @@ public class BicycleController : MonoBehaviour
         }
         else if (newBikeProgress < oldBikeProgress - 5.0f)
         {
-            Debug.Log("LOST YOU SUCKER!");
+            //Debug.Log("LOST YOU SUCKER!");
             lost = true;
         }
     }
@@ -256,6 +256,14 @@ public class BicycleController : MonoBehaviour
             AddEnergy(50.0f);
             FindObjectOfType<AudioManager>().Play("drink");
             Debug.Log("EnergyDrink collected.");
+            Destroy(collision.gameObject);
+        }
+        if(collision.CompareTag("PopUp"))
+        {
+            Debug.Log("PopUp");
+            Tutorial.hasCollided = true;
+            int caseCollision = collision.gameObject.GetComponent<PopUp>().GetCase();
+            Tutorial.caseForCollision = caseCollision;
             Destroy(collision.gameObject);
         }
         if (collision.CompareTag("Coin"))
