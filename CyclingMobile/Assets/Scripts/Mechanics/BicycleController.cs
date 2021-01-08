@@ -58,7 +58,7 @@ public class BicycleController : MonoBehaviour
 
     private void Awake()
     {
-        LoadSave();
+        //LoadSave();
         Debug.Log(player.GetComponent<Player>().skinState);
         BicycleControllerAnimator.SetInteger("skinState", player.GetComponent<Player>().skinState);
     }
@@ -77,6 +77,8 @@ public class BicycleController : MonoBehaviour
         oldBikeProgress = this.transform.position.x / flag.transform.position.x * 100.0f;
         newBikeProgress = oldBikeProgress;
         lost = false;
+        LoadSave();
+        Debug.Log("goldzik -> " + player.GetComponent<Player>().gold);
     }
 
     void Update()
@@ -154,7 +156,7 @@ public class BicycleController : MonoBehaviour
         newBikeProgress = this.transform.position.x / flag.transform.position.x * 100.0f;
         if (newBikeProgress >= oldBikeProgress)
         {
-            Debug.Log("NICE!");
+            //Debug.Log("NICE!");
             oldBikeProgress = newBikeProgress;
         }
         else if (newBikeProgress < oldBikeProgress - 5.0f)
