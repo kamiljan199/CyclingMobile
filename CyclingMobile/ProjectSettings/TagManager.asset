@@ -8,6 +8,7 @@ TagManager:
   - End
   - Coin
   - Bike
+  - PopUp
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ using System.IO;
 public class PlayButton : MonoBehaviour
 {
     public GameObject player;
+    public bool isTutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +55,14 @@ public class PlayButton : MonoBehaviour
         }
 
         Debug.Log("goldzik -> " + player.GetComponent<Player>().gold);
-        SceneManager.LoadScene("LevelChoser", LoadSceneMode.Single);
+        if (isTutorial == false)
+        {
+            SceneManager.LoadScene("LevelChoser", LoadSceneMode.Single);
+        }
+        else
+        {
+            SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
+        }
     }
 
     public void LoadSave()
