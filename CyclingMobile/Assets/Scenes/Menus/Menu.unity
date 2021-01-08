@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 109489712}
   - component: {fileID: 109489714}
   - component: {fileID: 109489713}
+  - component: {fileID: 109489715}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -193,6 +194,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109489711}
   m_CullTransparentMesh: 0
+--- !u!114 &109489715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109489711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3812dbdf9db8d7943ae05fb447fa0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneFilename: LevelNames
+  scenes:
+  - Menu
+  - LevelChoser
+  - Grass1
+  - Asphalt1
+  - Sand1
+  - Grass2
+  - Asphalt2
+  - Sand2
+  - ExpShop
+  - ItemShop
+  - Tutorial
 --- !u!1 &199280883
 GameObject:
   m_ObjectHideFlags: 0
