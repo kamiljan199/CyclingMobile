@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -278,17 +280,58 @@ public class BicycleController : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Stop("bike1");
 
+            string thisSceneName = SceneManager.GetActiveScene().name;
+
             if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Sand")
             {
-                levelBeaten.GetComponent<LevelInformations>().sandNumber++;
+                int number = 0;
+                for (int i = 0; i < ReadSceneNames.singleton.scenes.Length; i++)
+                {
+                    
+                    if (ReadSceneNames.singleton.scenes[i].Remove(4) == "Sand")
+                    {
+                        number++;
+                    }
+                }
+                if (number > int.Parse(thisSceneName.Remove(0, 4))) 
+                {
+                    levelBeaten.GetComponent<LevelInformations>().sandNumber++;
+                }
             }
             if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Grass")
             {
-                levelBeaten.GetComponent<LevelInformations>().grassNumber++;
+                int number = 0;
+                for (int i = 0; i < ReadSceneNames.singleton.scenes.Length; i++)
+                {
+                    Debug.Log(ReadSceneNames.singleton.scenes[i]);
+                    Debug.Log(ReadSceneNames.singleton.scenes.Length);
+                    if (ReadSceneNames.singleton.scenes[i].Contains("Grass"))
+                    {
+                        number++;
+                    }
+                }
+                Debug.Log(number);
+                if (number > int.Parse(thisSceneName.Remove(0, 5)))
+                {
+                    Debug.Log(int.Parse(thisSceneName.Remove(0, 5)));
+                    levelBeaten.GetComponent<LevelInformations>().grassNumber++;
+                }
             }
             if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Asphalt")
             {
-                levelBeaten.GetComponent<LevelInformations>().asphaltNumber++;
+                int number = 0;
+                for (int i = 0; i < ReadSceneNames.singleton.scenes.Length; i++)
+                {
+
+                    if (ReadSceneNames.singleton.scenes[i].Remove(7) == "Asphalt")
+                    {
+                        number++;
+                    }
+                }
+                if (number > int.Parse(thisSceneName.Remove(0, 7)))
+                {
+                    levelBeaten.GetComponent<LevelInformations>().asphaltNumber++;
+                }
             }
             Debug.Log("el");
             LevelInformations.exp += 10;
