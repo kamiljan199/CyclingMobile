@@ -2990,11 +2990,37 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 69023630}
+    - target: {fileID: 4272678585384354048, guid: 735c7785e4c9df64099df98d7253fede,
+        type: 3}
+      propertyPath: orthographic size
+      value: 5.620438
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272678585384354048, guid: 735c7785e4c9df64099df98d7253fede,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272678585384354048, guid: 735c7785e4c9df64099df98d7253fede,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272678585384354048, guid: 735c7785e4c9df64099df98d7253fede,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.87843144
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 735c7785e4c9df64099df98d7253fede, type: 3}
 --- !u!1 &1243417599 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4272678585286015842, guid: 735c7785e4c9df64099df98d7253fede,
+    type: 3}
+  m_PrefabInstance: {fileID: 1243417598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1243417600 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4272678585384354048, guid: 735c7785e4c9df64099df98d7253fede,
     type: 3}
   m_PrefabInstance: {fileID: 1243417598}
   m_PrefabAsset: {fileID: 0}
@@ -4174,7 +4200,7 @@ PrefabInstance:
     - target: {fileID: 1798345093001983836, guid: a8b9a271d97f8f441b3c33a3655b76ef,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.9118
+      value: -0.9118042
       objectReference: {fileID: 0}
     - target: {fileID: 1798345093001983836, guid: a8b9a271d97f8f441b3c33a3655b76ef,
         type: 3}
@@ -4300,6 +4326,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 99.997986
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214520967885862067, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1243417600}
+    - target: {fileID: 9214520968201596662, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -96.117004
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8b9a271d97f8f441b3c33a3655b76ef, type: 3}
