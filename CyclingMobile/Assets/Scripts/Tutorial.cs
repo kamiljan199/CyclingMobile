@@ -110,35 +110,35 @@ public class Tutorial : MonoBehaviour
         switch (caseForCollision) 
         {
             case 1:
-                Vibration.Vibrate(100);
+                //Vibration.Vibrate(100);
                 popUp1.SetActive(true);
                 Time.timeScale = 0.0f;
                 isPaused = true;
                 FindObjectOfType<AudioManager>().Stop("bike1");
                 break;
             case 2:
-                Vibration.Vibrate(100);
+                //Vibration.Vibrate(100);
                 popUp2.SetActive(true);
                 Time.timeScale = 0.0f;
                 isPaused = true;
                 FindObjectOfType<AudioManager>().Stop("bike1");
                 break;
             case 3:
-                Vibration.Vibrate(100);
+                //Vibration.Vibrate(100);
                 popUp3.SetActive(true);
                 Time.timeScale = 0.0f;
                 isPaused = true;
                 FindObjectOfType<AudioManager>().Stop("bike1");
                 break;
             case 4:
-                Vibration.Vibrate(100);
+                //Vibration.Vibrate(100);
                 popUp4.SetActive(true);
                 Time.timeScale = 0.0f;
                 isPaused = true;
                 FindObjectOfType<AudioManager>().Stop("bike1");
                 break;
             case 5:
-                Vibration.Vibrate(100);
+                //Vibration.Vibrate(100);
                 popUp5.SetActive(true);
                 Time.timeScale = 0.0f;
                 isPaused = true;
