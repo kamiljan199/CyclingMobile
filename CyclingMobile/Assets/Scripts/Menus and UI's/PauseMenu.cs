@@ -56,10 +56,12 @@ public class PauseMenu : MonoBehaviour
     {
         if (isButtonPressed == false)
         {
+            Debug.Log("isButtonPressed == false");
             isButtonPressed = true;
         }
         else if (isButtonPressed == true)
         {
+            Debug.Log("isButtonPressed == true");
             isButtonPressed = false;
         }
     }
@@ -74,9 +76,10 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        Vibration.Vibrate(100);
+        //Vibration.Vibrate(100);
         pauseMenu.SetActive(true);
         Time.timeScale = 0.0f;
+        Debug.Log(Time.timeScale.ToString());
         isPaused = true;
         FindObjectOfType<AudioManager>().Stop("bike1");
     }

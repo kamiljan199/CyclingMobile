@@ -161,9 +161,9 @@ public class BicycleController : MonoBehaviour
             //Debug.Log("NICE!");
             oldBikeProgress = newBikeProgress;
         }
-        else if (newBikeProgress < oldBikeProgress - 5.0f)
+        else if (newBikeProgress < oldBikeProgress - 15.0f)
         {
-            //Debug.Log("LOST YOU SUCKER!");
+            Debug.Log("LOST YOU SUCKER!");
             lost = true;
         }
     }
@@ -376,7 +376,7 @@ public class BicycleController : MonoBehaviour
 
         if ((velocity > 90 && velocity <110) || (velocity > 190 && velocity<210))
         {
-            Vibration.Vibrate();
+            //Vibration.Vibrate();
             Instantiate(confettiParticle, transform);
         }
     }

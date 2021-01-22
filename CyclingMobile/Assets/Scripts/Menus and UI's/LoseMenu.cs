@@ -28,7 +28,7 @@ public class LoseMenu : MonoBehaviour
 
     void Lose()
     {
-        Vibration.Vibrate(100);
+        //Vibration.Vibrate(100);
         LosePanel.SetActive(true);
         Time.timeScale = 0.0f;
         FindObjectOfType<AudioManager>().Stop("bike1");
