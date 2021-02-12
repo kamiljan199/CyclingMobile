@@ -288,7 +288,7 @@ public class BicycleController : MonoBehaviour
                 for (int i = 0; i < ReadSceneNames.singleton.scenes.Length; i++)
                 {
                     
-                    if (ReadSceneNames.singleton.scenes[i].Remove(4) == "Sand")
+                    if (ReadSceneNames.singleton.scenes[i].Contains("Sand"))
                     {
                         number++;
                     }
@@ -298,7 +298,7 @@ public class BicycleController : MonoBehaviour
                     levelBeaten.GetComponent<LevelInformations>().sandNumber++;
                 }
             }
-            if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Grass")
+            else if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Grass")
             {
                 int number = 0;
                 for (int i = 0; i < ReadSceneNames.singleton.scenes.Length; i++)
@@ -317,13 +317,13 @@ public class BicycleController : MonoBehaviour
                     levelBeaten.GetComponent<LevelInformations>().grassNumber++;
                 }
             }
-            if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Asphalt")
+            else if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Asphalt")
             {
                 int number = 0;
                 for (int i = 0; i < ReadSceneNames.singleton.scenes.Length; i++)
                 {
 
-                    if (ReadSceneNames.singleton.scenes[i].Remove(7) == "Asphalt")
+                    if (ReadSceneNames.singleton.scenes[i].Contains("Asphalt"))
                     {
                         number++;
                     }
@@ -397,6 +397,29 @@ public class BicycleController : MonoBehaviour
         player.GetComponent<Player>().skin4 = data.skin4;
         player.GetComponent<Player>().skin5 = data.skin5;
         player.GetComponent<Player>().skinState = data.skinState;
+
+        if(data.grass1 == false && data.grass2 == false)
+            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(1);
+        else if(data.grass1 == true && data.grass2 == false)
+            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(2);
+        else if(data.grass1 == true && data.grass2 == true)
+            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(3);
+
+        if (data.sand1 == false && data.sand2 == false)
+            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(1);
+        else if (data.sand1 == true && data.sand2 == false)
+            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(2);
+        else if (data.sand1 == true && data.sand2 == true)
+            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(3);
+
+        if (data.asphalt1 == true && data.asphalt2 == false)
+            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(1);
+        else if (data.asphalt1 == true && data.asphalt2 == false)
+            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(2);
+        else if (data.asphalt1 == true && data.asphalt2 == true)
+            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(3);
+
+
         Debug.Log("Save wczytany pomyslnie.");
     }
 

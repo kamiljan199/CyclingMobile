@@ -11,11 +11,14 @@ public class ButtonListControl : MonoBehaviour
     public string biome;
 
     private string importantStuff;
+    GameObject player;
 
     GameObject levelBeaten;
     void Start()
     {
         levelBeaten = GameObject.Find("LevelBeaten");
+        player = GameObject.Find("EventSystem");
+        LoadSave();
 
         if (biome == "grass")
         {
@@ -63,5 +66,46 @@ public class ButtonListControl : MonoBehaviour
         s1 = s1.Remove(s1.Length - 1);
         levelBeaten.GetComponent<LevelInformations>().nameOfLevel = s1;
         SceneManager.LoadScene(s2);
+    }
+
+    public void LoadSave()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        player.GetComponent<Player>().gold = data.gold;
+        player.GetComponent<Player>().grass1State = data.grass1;
+        player.GetComponent<Player>().grass2State = data.grass2;
+        player.GetComponent<Player>().asphalt1State = data.asphalt1;
+        player.GetComponent<Player>().asphalt2State = data.asphalt2;
+        player.GetComponent<Player>().sand1State = data.sand1;
+        player.GetComponent<Player>().sand2State = data.sand2;
+        player.GetComponent<Player>().skin0 = data.skin0;
+        player.GetComponent<Player>().skin1 = data.skin1;
+        player.GetComponent<Player>().skin2 = data.skin2;
+        player.GetComponent<Player>().skin3 = data.skin3;
+        player.GetComponent<Player>().skin4 = data.skin4;
+        player.GetComponent<Player>().skin5 = data.skin5;
+        player.GetComponent<Player>().skinState = data.skinState;
+
+        if (data.grass1 == false && data.grass2 == false)
+            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(1);
+        else if (data.grass1 == true && data.grass2 == false)
+            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(2);
+        else if (data.grass1 == true && data.grass2 == true)
+            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(2);
+
+        if (data.sand1 == false && data.sand2 == false)
+            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(1);
+        else if (data.sand1 == true && data.sand2 == false)
+            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(2);
+        else if (data.sand1 == true && data.sand2 == true)
+            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(2);
+
+        if (data.asphalt1 == true && data.asphalt2 == false)
+            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(1);
+        else if (data.asphalt1 == true && data.asphalt2 == false)
+            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(2);
+        else if (data.asphalt1 == true && data.asphalt2 == true)
+            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(2);
+        Debug.Log("Save wczytany pomyslnie.");
     }
 }

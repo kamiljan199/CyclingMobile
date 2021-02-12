@@ -1,69 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using System.IO;
 
-public class PlayButton : MonoBehaviour
+public class QuickLoad : MonoBehaviour
 {
-    public GameObject player;
-    public bool isTutorial;
-    //GameObject levelBeaten;
+    GameObject player;
+    GameObject levelBeaten;
+
+    void Awake()
+    {
+        player = this.gameObject;
+        levelBeaten = GameObject.Find("LevelBeaten");
+
+        LoadSave();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        //levelBeaten = GameObject.Find("LevelBeaten");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    public void OnClickUpgrades()
-    {
-        LoadSave();
-        SceneManager.LoadScene("ExpShop", LoadSceneMode.Single);
-    }
-
-    public void OnClickShop()
-    {
-        LoadSave();
-        SceneManager.LoadScene("ItemShop", LoadSceneMode.Single);
-    }
-
-    public void OnClickBack() 
-    {
-        //LoadSave();
-        SaveSystem.SavePlayer(player.GetComponent<Player>());
-        SceneManager.LoadScene("LevelChoser", LoadSceneMode.Single); 
-    }
-
-    public void OnClick()
-    {
-        string path = Path.Combine(Application.persistentDataPath, "s1.eo");
-        if (File.Exists(path) == false)
-        {
-            Debug.Log("Save nie istnieje, tworze...");
-            SaveSystem.SavePlayer(player.GetComponent<Player>());
-        }
-        else
-        {
-            LoadSave();
-        }
-
-        Debug.Log("goldzik -> " + player.GetComponent<Player>().gold);
-        if (isTutorial == false)
-        {
-            SceneManager.LoadScene("LevelChoser", LoadSceneMode.Single);
-        }
-        else
-        {
-            SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
-        }
     }
 
     public void LoadSave()
@@ -83,7 +44,7 @@ public class PlayButton : MonoBehaviour
         player.GetComponent<Player>().skin4 = data.skin4;
         player.GetComponent<Player>().skin5 = data.skin5;
         player.GetComponent<Player>().skinState = data.skinState;
-        /*
+
         if (data.grass1 == true && data.grass2 == true)
         {
             levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(2);
@@ -95,7 +56,7 @@ public class PlayButton : MonoBehaviour
         if (data.asphalt1 == true && data.asphalt2 == true)
         {
             levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(2);
-        }*/
+        }
         Debug.Log("Save wczytany pomyslnie.");
     }
 }
