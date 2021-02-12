@@ -96,6 +96,14 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Quitting the game");
         Application.Quit();
     }
+
+    public void RestartLevel()
+    {
+        Time.timeScale = 1.0f;
+        int actualSceneNumber = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(actualSceneNumber);
+        //FindObjectOfType<AudioManager>().Start("bike1");
+    }
 }
 
 
