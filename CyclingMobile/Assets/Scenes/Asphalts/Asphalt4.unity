@@ -1035,10 +1035,16 @@ MonoBehaviour:
   skinState: 0
   grass1State: 0
   grass2State: 0
+  grass3State: 0
+  grass4State: 0
   asphalt1State: 0
   asphalt2State: 0
+  asphalt3State: 0
+  asphalt4State: 0
   sand1State: 0
   sand2State: 0
+  sand3State: 0
+  sand4State: 0
   skin0: 0
   skin1: 0
   skin2: 0
@@ -2587,6 +2593,11 @@ PrefabInstance:
     - target: {fileID: 6821932284245579530, guid: 9f2f91f56b36f9140a71b1512ab58892,
         type: 3}
       propertyPath: asphalt1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821932284245579530, guid: 9f2f91f56b36f9140a71b1512ab58892,
+        type: 3}
+      propertyPath: asphalt4
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
