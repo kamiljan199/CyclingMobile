@@ -18,17 +18,35 @@ EditorBuildSettings:
     path: Assets/Scenes/Grasses/Grass2.unity
     guid: 098a17e0dfd5320459b9d4f49f6db163
   - enabled: 1
+    path: Assets/Scenes/Grasses/Grass3.unity
+    guid: e722bcc4010425b499b8a79677b3af3b
+  - enabled: 1
+    path: Assets/Scenes/Grasses/Grass4.unity
+    guid: eb44d4c13999ea547a62f358672bd1ed
+  - enabled: 1
     path: Assets/Scenes/Asphalts/Asphalt1.unity
     guid: 274048d5c35e59f45a80f8ac14699aff
   - enabled: 1
     path: Assets/Scenes/Asphalts/Asphalt2.unity
     guid: 99cb4e558788bc5448eae2a95c33f6a9
   - enabled: 1
+    path: Assets/Scenes/Asphalts/Asphalt3.unity
+    guid: f9db1627a7b30724cb35b6726b9f47d7
+  - enabled: 1
+    path: Assets/Scenes/Asphalts/Asphalt4.unity
+    guid: 4fb276d2a3bcfe14692d467435ff79df
+  - enabled: 1
     path: Assets/Scenes/Sands/Sand1.unity
     guid: a5660fdc0d6bdc24fa05e2310d3d4e02
   - enabled: 1
     path: Assets/Scenes/Sands/Sand2.unity
     guid: 9197b4ab84054574a9d6e9d244337c62
+  - enabled: 1
+    path: Assets/Scenes/Sands/Sand3.unity
+    guid: 6cbfa313167258f4eb2808a06e9714a5
+  - enabled: 1
+    path: Assets/Scenes/Sands/Sand4.unity
+    guid: 51a657ede9d5c994e94ece76f228ad0f
   - enabled: 1
     path: Assets/Scenes/Menus/ExpShop.unity
     guid: 86df3e37376d23042a944bdda2245b74
