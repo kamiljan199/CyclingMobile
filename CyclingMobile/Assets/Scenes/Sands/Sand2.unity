@@ -4434,10 +4434,10 @@ Transform:
   - {fileID: 628249264}
   - {fileID: 1247801150}
   - {fileID: 1547191715}
+  - {fileID: 909968001}
   - {fileID: 998837976}
   - {fileID: 592530968}
   - {fileID: 2058874635}
-  - {fileID: 909968001}
   - {fileID: 2091057928}
   - {fileID: 415547042}
   - {fileID: 1335049923}
@@ -4927,6 +4927,32 @@ PrefabInstance:
       propertyPath: m_MatchWidthOrHeight
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9214520967586143742, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 53819e3741687774eb6cd24d75634881,
+        type: 3}
+    - target: {fileID: 1051545179787480420, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 25.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051545179787480420, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051545179787480420, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.02999878
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051545179787480420, guid: a8b9a271d97f8f441b3c33a3655b76ef,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -36.39
+      objectReference: {fileID: 0}
     - target: {fileID: 6488114888238580493, guid: a8b9a271d97f8f441b3c33a3655b76ef,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -5012,12 +5038,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9214520967586143742, guid: a8b9a271d97f8f441b3c33a3655b76ef,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 53819e3741687774eb6cd24d75634881,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8b9a271d97f8f441b3c33a3655b76ef, type: 3}
 --- !u!1 &1888722125 stripped
@@ -6043,6 +6063,16 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 6821932284245579530, guid: 9f2f91f56b36f9140a71b1512ab58892,
+        type: 3}
+      propertyPath: sand1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821932284245579530, guid: 9f2f91f56b36f9140a71b1512ab58892,
+        type: 3}
+      propertyPath: sand2
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 932868440074034741, guid: 9f2f91f56b36f9140a71b1512ab58892,
         type: 3}
       propertyPath: sand1
@@ -6058,16 +6088,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 5308772203682499720}
-    - target: {fileID: 6821932284245579530, guid: 9f2f91f56b36f9140a71b1512ab58892,
-        type: 3}
-      propertyPath: sand1
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6821932284245579530, guid: 9f2f91f56b36f9140a71b1512ab58892,
-        type: 3}
-      propertyPath: sand2
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f2f91f56b36f9140a71b1512ab58892, type: 3}
 --- !u!4 &4911065465127118634 stripped
@@ -6165,10 +6185,16 @@ MonoBehaviour:
   skinState: 0
   grass1State: 0
   grass2State: 0
+  grass3State: 0
+  grass4State: 0
   asphalt1State: 0
   asphalt2State: 0
+  asphalt3State: 0
+  asphalt4State: 0
   sand1State: 0
   sand2State: 0
+  sand3State: 0
+  sand4State: 0
   skin0: 0
   skin1: 0
   skin2: 0

@@ -1250,6 +1250,7 @@ MonoBehaviour:
   gearText: {fileID: 1849443410}
   tiresText: {fileID: 1061010604}
   frameText: {fileID: 385944142}
+  player: {fileID: 2009345815}
 --- !u!4 &1678989065
 Transform:
   m_ObjectHideFlags: 0
@@ -1639,6 +1640,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2009345814}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2009345816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009345815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ff0c99e8e803240b359503bd7051f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2026723023776948106
 MonoBehaviour:
   m_ObjectHideFlags: 0

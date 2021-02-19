@@ -58,6 +58,10 @@ public class BicycleController : MonoBehaviour
     private float oldBikeProgress;
     public bool lost;
 
+    private GameObject edge;
+    private EdgeCollider2D edgeCol;
+    public BoxCollider2D head;
+
     private void Awake()
     {
         //LoadSave();
@@ -81,6 +85,9 @@ public class BicycleController : MonoBehaviour
         lost = false;
         LoadSave();
         Debug.Log("goldzik -> " + player.GetComponent<Player>().gold);
+
+        edge = GameObject.Find("SpriteShape");
+        edgeCol = edge.GetComponent<EdgeCollider2D>();
     }
 
     void Update()
