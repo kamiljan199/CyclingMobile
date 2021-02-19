@@ -8,10 +8,23 @@ public class Upgrades : MonoBehaviour
     public Text gearText;
     public Text tiresText;
     public Text frameText;
+    public GameObject player;
+    private Player p;
+
+    private GameObject levelbeaten;
+
+    private int sandNumber;
+    private int grassNumber;
+    private int asphaltNumber;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        p = player.GetComponent<Player>();
+        levelbeaten = GameObject.Find("LevelBeaten");
+        sandNumber = levelbeaten.GetComponent<LevelInformations>().GetSandNumber();
+        grassNumber = levelbeaten.GetComponent<LevelInformations>().GetGrassNumber();
+        asphaltNumber = levelbeaten.GetComponent<LevelInformations>().GetAsphaltNumber();
     }
 
     // Update is called once per frame
@@ -70,7 +83,12 @@ public class Upgrades : MonoBehaviour
             LevelInformations.exp = 0;
             LevelInformations.maxSpeed += 30;
             LevelInformations.frameLevel++;
-        } 
+        }
+        levelbeaten.GetComponent<LevelInformations>().SetAsphaltNumber(asphaltNumber);
+        levelbeaten.GetComponent<LevelInformations>().SetGrassNumber(grassNumber);
+        levelbeaten.GetComponent<LevelInformations>().SetSandNumber(sandNumber);
+
+        SaveSystem.SavePlayer(p);
     }
 
     public void OnClickGears()
@@ -81,6 +99,10 @@ public class Upgrades : MonoBehaviour
             LevelInformations.gearUpgrade += 0.05f;
             LevelInformations.gearLevel++;
         }
+        levelbeaten.GetComponent<LevelInformations>().SetAsphaltNumber(asphaltNumber);
+        levelbeaten.GetComponent<LevelInformations>().SetGrassNumber(grassNumber);
+        levelbeaten.GetComponent<LevelInformations>().SetSandNumber(sandNumber);
+        SaveSystem.SavePlayer(p);
     }
 
     public void OnClickTires()
@@ -90,5 +112,9 @@ public class Upgrades : MonoBehaviour
             LevelInformations.exp = 0;
             LevelInformations.tiresLevel++;
         }
+        levelbeaten.GetComponent<LevelInformations>().SetAsphaltNumber(asphaltNumber);
+        levelbeaten.GetComponent<LevelInformations>().SetGrassNumber(grassNumber);
+        levelbeaten.GetComponent<LevelInformations>().SetSandNumber(sandNumber);
+        SaveSystem.SavePlayer(p);
     }
 }
