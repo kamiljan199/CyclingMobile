@@ -13,6 +13,7 @@ public class LevelInformations : MonoBehaviour
     public static float maxSpeed = 300.0f;
     public static float gearUpgrade = 1.0f;
 
+
     public int sandNumber;
     public int grassNumber;
     public int asphaltNumber;

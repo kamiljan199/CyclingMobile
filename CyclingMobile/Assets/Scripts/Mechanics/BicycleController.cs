@@ -43,7 +43,7 @@ public class BicycleController : MonoBehaviour
     private float afterBoostTime = -2.0f;
 
     private float energy;
-    public float maxEnergy = 100.0f;
+    public static float maxEnergy = 100.0f;
 
     public int gear = 1;
     public bool boostClicked = false;

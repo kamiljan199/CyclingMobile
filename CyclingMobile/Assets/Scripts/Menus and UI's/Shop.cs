@@ -135,22 +135,34 @@ public class Shop : MonoBehaviour
         if (skin1 == true && player.GetComponent<Player>().skin1 == true)
         {
             player.GetComponent<Player>().skinState = 1;
+            LevelInformations.maxSpeed = 310.0f;
+            LevelInformations.gearUpgrade = 1.1f;
+            BicycleController.maxEnergy = 110.0f;
             Debug.Log(player.GetComponent<Player>().skinState);
             SaveSystem.SavePlayer(player.GetComponent<Player>());
         }
         if (skin2 == true && player.GetComponent<Player>().skin2 == true)
         {
             player.GetComponent<Player>().skinState = 2;
+            LevelInformations.maxSpeed = 320.0f;
+            LevelInformations.gearUpgrade = 1.2f;
+            BicycleController.maxEnergy = 120.0f;
             SaveSystem.SavePlayer(player.GetComponent<Player>());
         }
         if (skin3 == true && player.GetComponent<Player>().skin3 == true)
         {
             player.GetComponent<Player>().skinState = 3;
+            LevelInformations.maxSpeed = 330.0f;
+            LevelInformations.gearUpgrade = 1.3f;
+            BicycleController.maxEnergy = 130.0f;
             SaveSystem.SavePlayer(player.GetComponent<Player>());
         }
         if (skin4 == true && player.GetComponent<Player>().skin4 == true)
         {
             player.GetComponent<Player>().skinState = 4;
+            LevelInformations.maxSpeed = 340.0f;
+            LevelInformations.gearUpgrade = 1.4f;
+            BicycleController.maxEnergy = 140.0f;
             SaveSystem.SavePlayer(player.GetComponent<Player>());
         }
     }

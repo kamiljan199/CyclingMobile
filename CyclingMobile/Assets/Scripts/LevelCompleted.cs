@@ -7,7 +7,7 @@ public class LevelCompleted : MonoBehaviour
     public bool grass1;
     public static bool grass1Static = true;
     public bool grass2;
-    public static bool grass2Static = false;
+    public static bool grass2Static = true;
     public bool grass3;
     public static bool grass3Static = false;
     public bool grass4;
