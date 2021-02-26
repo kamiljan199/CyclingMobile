@@ -27,6 +27,6 @@ public class ButtonListButton : MonoBehaviour
     public void OnClick()
     {
         Debug.Log(myLevelToLoad);
-        buttonControl.ButtonClicked(myLevelToLoad);
+        SceneManager.LoadScene(myLevelToLoad);
     }
 }

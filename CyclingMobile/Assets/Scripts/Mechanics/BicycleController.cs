@@ -289,57 +289,6 @@ public class BicycleController : MonoBehaviour
 
             string thisSceneName = SceneManager.GetActiveScene().name;
 
-            if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Sand")
-            {
-                int number = 0;
-                for (int i = 0; i < ReadSceneNames.singleton.scenes.Length; i++)
-                {
-                    
-                    if (ReadSceneNames.singleton.scenes[i].Contains("Sand"))
-                    {
-                        number++;
-                    }
-                }
-                if (number > int.Parse(thisSceneName.Remove(0, 4))) 
-                {
-                    levelBeaten.GetComponent<LevelInformations>().sandNumber++;
-                }
-            }
-            else if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Grass")
-            {
-                int number = 0;
-                for (int i = 0; i < ReadSceneNames.singleton.scenes.Length; i++)
-                {
-                    Debug.Log(ReadSceneNames.singleton.scenes[i]);
-                    Debug.Log(ReadSceneNames.singleton.scenes.Length);
-                    if (ReadSceneNames.singleton.scenes[i].Contains("Grass"))
-                    {
-                        number++;
-                    }
-                }
-                Debug.Log(number);
-                if (number > int.Parse(thisSceneName.Remove(0, 5)))
-                {
-                    Debug.Log(int.Parse(thisSceneName.Remove(0, 5)));
-                    levelBeaten.GetComponent<LevelInformations>().grassNumber++;
-                }
-            }
-            else if (levelBeaten.GetComponent<LevelInformations>().nameOfLevel == "Asphalt")
-            {
-                int number = 0;
-                for (int i = 0; i < ReadSceneNames.singleton.scenes.Length; i++)
-                {
-
-                    if (ReadSceneNames.singleton.scenes[i].Contains("Asphalt"))
-                    {
-                        number++;
-                    }
-                }
-                if (number > int.Parse(thisSceneName.Remove(0, 7)))
-                {
-                    levelBeaten.GetComponent<LevelInformations>().asphaltNumber++;
-                }
-            }
             Debug.Log("el");
             LevelInformations.exp += 10;
             endText.SetActive(true);
@@ -347,52 +296,64 @@ public class BicycleController : MonoBehaviour
             if (flag.GetComponent<LevelCompleted>().grass1 == true)
             {
                 player.GetComponent<Player>().grass1State = true;
+                LevelCompleted.grass2Static = true;
             }
             else if (flag.GetComponent<LevelCompleted>().grass2 == true)
             {
                 player.GetComponent<Player>().grass2State = true;
+                LevelCompleted.grass3Static = true;
             }
             else if (flag.GetComponent<LevelCompleted>().grass3 == true)
             {
                 player.GetComponent<Player>().grass3State = true;
+                LevelCompleted.grass4Static = true;
             }
             else if (flag.GetComponent<LevelCompleted>().grass4 == true)
             {
                 player.GetComponent<Player>().grass4State = true;
+                LevelCompleted.grass4Static = true;
             }
 
             else if (flag.GetComponent<LevelCompleted>().asphalt1 == true)
             {
                 player.GetComponent<Player>().asphalt1State = true;
+                LevelCompleted.asphalt2Static = true;
             }
             else if (flag.GetComponent<LevelCompleted>().asphalt2 == true)
             {
                 player.GetComponent<Player>().asphalt2State = true;
+                LevelCompleted.asphalt3Static = true;
             }
             else if (flag.GetComponent<LevelCompleted>().asphalt3 == true)
             {
                 player.GetComponent<Player>().asphalt3State = true;
+                LevelCompleted.asphalt4Static = true;
             }
             else if (flag.GetComponent<LevelCompleted>().asphalt4 == true)
             {
                 player.GetComponent<Player>().asphalt4State = true;
+                LevelCompleted.asphalt4Static = true;
             }
 
             else if (flag.GetComponent<LevelCompleted>().sand1 == true)
             {
                 player.GetComponent<Player>().sand1State = true;
+                LevelCompleted.sand2Static = true;
             }
             else if (flag.GetComponent<LevelCompleted>().sand2 == true)
             {
                 player.GetComponent<Player>().sand2State = true;
+                LevelCompleted.sand3Static = true;
             }
             else if (flag.GetComponent<LevelCompleted>().sand3 == true)
             {
                 player.GetComponent<Player>().sand3State = true;
+                LevelCompleted.sand4Static = true;
             }
             else if (flag.GetComponent<LevelCompleted>().sand4 == true)
             {
                 player.GetComponent<Player>().sand4State = true;
+                LevelCompleted.sand4Static = true;
             }
 
             SaveSystem.SavePlayer(player.GetComponent<Player>());
@@ -437,38 +398,38 @@ public class BicycleController : MonoBehaviour
         player.GetComponent<Player>().skin5 = data.skin5;
         player.GetComponent<Player>().skinState = data.skinState;
 
-        if (data.grass1 == false && data.grass2 == false && data.grass3 == false && data.grass4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(1);
-        else if (data.grass1 == true && data.grass2 == false && data.grass3 == false && data.grass4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(2);
-        else if (data.grass1 == true && data.grass2 == true && data.grass3 == false && data.grass4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(3);
-        else if (data.grass1 == true && data.grass2 == true && data.grass3 == true && data.grass4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(4);
-        else if (data.grass1 == true && data.grass2 == true && data.grass3 == true && data.grass4 == true)
-            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(4);
+        //if (data.grass1 == false && data.grass2 == false && data.grass3 == false && data.grass4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(1);
+        //else if (data.grass1 == true && data.grass2 == false && data.grass3 == false && data.grass4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(2);
+        //else if (data.grass1 == true && data.grass2 == true && data.grass3 == false && data.grass4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(3);
+        //else if (data.grass1 == true && data.grass2 == true && data.grass3 == true && data.grass4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(4);
+        //else if (data.grass1 == true && data.grass2 == true && data.grass3 == true && data.grass4 == true)
+        //    levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(4);
 
-        if (data.sand1 == false && data.sand2 == false && data.sand3 == false && data.sand4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(1);
-        else if (data.sand1 == true && data.sand2 == false && data.sand3 == false && data.sand4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(2);
-        else if (data.sand1 == true && data.sand2 == true && data.sand3 == false && data.sand4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(3);
-        else if (data.sand1 == true && data.sand2 == true && data.sand3 == true && data.sand4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(4);
-        else if (data.sand1 == true && data.sand2 == true && data.sand3 == true && data.sand4 == true)
-            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(4);
+        //if (data.sand1 == false && data.sand2 == false && data.sand3 == false && data.sand4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetSandNumber(1);
+        //else if (data.sand1 == true && data.sand2 == false && data.sand3 == false && data.sand4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetSandNumber(2);
+        //else if (data.sand1 == true && data.sand2 == true && data.sand3 == false && data.sand4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetSandNumber(3);
+        //else if (data.sand1 == true && data.sand2 == true && data.sand3 == true && data.sand4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetSandNumber(4);
+        //else if (data.sand1 == true && data.sand2 == true && data.sand3 == true && data.sand4 == true)
+        //    levelBeaten.GetComponent<LevelInformations>().SetSandNumber(4);
 
-        if (data.asphalt1 == false && data.asphalt2 == false && data.asphalt3 == false && data.asphalt4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(1);
-        else if (data.asphalt1 == true && data.asphalt2 == false && data.asphalt3 == false && data.asphalt4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(2);
-        else if (data.asphalt1 == true && data.asphalt2 == true && data.asphalt3 == false && data.asphalt4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(3);
-        else if (data.asphalt1 == true && data.asphalt2 == true && data.asphalt3 == true && data.asphalt4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(4);
-        else if (data.asphalt1 == true && data.asphalt2 == true && data.asphalt3 == true && data.asphalt4 == true)
-            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(4);
+        //if (data.asphalt1 == false && data.asphalt2 == false && data.asphalt3 == false && data.asphalt4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(1);
+        //else if (data.asphalt1 == true && data.asphalt2 == false && data.asphalt3 == false && data.asphalt4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(2);
+        //else if (data.asphalt1 == true && data.asphalt2 == true && data.asphalt3 == false && data.asphalt4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(3);
+        //else if (data.asphalt1 == true && data.asphalt2 == true && data.asphalt3 == true && data.asphalt4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(4);
+        //else if (data.asphalt1 == true && data.asphalt2 == true && data.asphalt3 == true && data.asphalt4 == true)
+        //    levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(4);
 
         Debug.Log("Save wczytany pomyslnie.");
     }

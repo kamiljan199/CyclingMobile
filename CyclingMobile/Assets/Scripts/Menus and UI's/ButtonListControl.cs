@@ -13,21 +13,50 @@ public class ButtonListControl : MonoBehaviour
     private string importantStuff;
     GameObject player;
 
-    GameObject levelBeaten;
     void Start()
     {
-        levelBeaten = GameObject.Find("LevelBeaten");
         player = GameObject.Find("EventSystem");
         LoadSave();
 
         if (biome == "grass")
         {
-            for (int i = 1; i <= levelBeaten.GetComponent<LevelInformations>().grassNumber; i++)
+            Debug.Log(LevelCompleted.grass1Static);
+            Debug.Log(LevelCompleted.grass2Static);
+            Debug.Log(LevelCompleted.grass3Static);
+            Debug.Log(LevelCompleted.grass4Static);
+            if (LevelCompleted.grass1Static == true)
             {
                 GameObject button = Instantiate(buttonTemlate) as GameObject;
                 button.SetActive(true);
 
-                button.GetComponent<ButtonListButton>().SetText("Grass " + i, "Grass" + i);
+                button.GetComponent<ButtonListButton>().SetText("Grass 1", "Grass1");
+
+                button.transform.SetParent(buttonTemlate.transform.parent, false);
+            }
+            if (LevelCompleted.grass2Static == true)
+            {
+                GameObject button = Instantiate(buttonTemlate) as GameObject;
+                button.SetActive(true);
+
+                button.GetComponent<ButtonListButton>().SetText("Grass 2", "Grass2");
+
+                button.transform.SetParent(buttonTemlate.transform.parent, false);
+            }
+            if (LevelCompleted.grass3Static == true)
+            {
+                GameObject button = Instantiate(buttonTemlate) as GameObject;
+                button.SetActive(true);
+
+                button.GetComponent<ButtonListButton>().SetText("Grass 3", "Grass3");
+
+                button.transform.SetParent(buttonTemlate.transform.parent, false);
+            }
+            if (LevelCompleted.grass4Static == true)
+            {
+                GameObject button = Instantiate(buttonTemlate) as GameObject;
+                button.SetActive(true);
+
+                button.GetComponent<ButtonListButton>().SetText("Grass 4", "Grass4");
 
                 button.transform.SetParent(buttonTemlate.transform.parent, false);
             }
@@ -35,12 +64,43 @@ public class ButtonListControl : MonoBehaviour
 
         if (biome == "sand")
         {
-            for (int i = 1; i <= levelBeaten.GetComponent<LevelInformations>().sandNumber; i++)
+            Debug.Log(LevelCompleted.sand1Static);
+            Debug.Log(LevelCompleted.sand2Static);
+            Debug.Log(LevelCompleted.sand3Static);
+            Debug.Log(LevelCompleted.sand4Static);
+            if (LevelCompleted.sand1Static == true)
             {
                 GameObject button = Instantiate(buttonTemlate) as GameObject;
                 button.SetActive(true);
 
-                button.GetComponent<ButtonListButton>().SetText("Sand " + i, "Sand" + i);
+                button.GetComponent<ButtonListButton>().SetText("Sand 1", "Sand1");
+
+                button.transform.SetParent(buttonTemlate.transform.parent, false);
+            }
+            if (LevelCompleted.sand2Static == true)
+            {
+                GameObject button = Instantiate(buttonTemlate) as GameObject;
+                button.SetActive(true);
+
+                button.GetComponent<ButtonListButton>().SetText("Sand 2", "Sand2");
+
+                button.transform.SetParent(buttonTemlate.transform.parent, false);
+            }
+            if (LevelCompleted.sand3Static == true)
+            {
+                GameObject button = Instantiate(buttonTemlate) as GameObject;
+                button.SetActive(true);
+
+                button.GetComponent<ButtonListButton>().SetText("Sand 3", "Sand3");
+
+                button.transform.SetParent(buttonTemlate.transform.parent, false);
+            }
+            if (LevelCompleted.sand4Static == true)
+            {
+                GameObject button = Instantiate(buttonTemlate) as GameObject;
+                button.SetActive(true);
+
+                button.GetComponent<ButtonListButton>().SetText("Sand 4", "Sand4");
 
                 button.transform.SetParent(buttonTemlate.transform.parent, false);
             }
@@ -48,24 +108,47 @@ public class ButtonListControl : MonoBehaviour
 
         if (biome == "asphalt")
         {
-            for (int i = 1; i <= levelBeaten.GetComponent<LevelInformations>().grassNumber; i++)
+            Debug.Log(LevelCompleted.asphalt1Static);
+            Debug.Log(LevelCompleted.asphalt2Static);
+            Debug.Log(LevelCompleted.asphalt3Static);
+            Debug.Log(LevelCompleted.asphalt4Static);
+            if (LevelCompleted.asphalt1Static == true)
             {
                 GameObject button = Instantiate(buttonTemlate) as GameObject;
                 button.SetActive(true);
 
-                button.GetComponent<ButtonListButton>().SetText("Asphalt " + i, "Asphalt" + i);
+                button.GetComponent<ButtonListButton>().SetText("Asphalt 1", "Asphalt1");
+
+                button.transform.SetParent(buttonTemlate.transform.parent, false);
+            }
+            if (LevelCompleted.asphalt2Static == true)
+            {
+                GameObject button = Instantiate(buttonTemlate) as GameObject;
+                button.SetActive(true);
+
+                button.GetComponent<ButtonListButton>().SetText("Asphalt 2", "Asphalt2");
+
+                button.transform.SetParent(buttonTemlate.transform.parent, false);
+            }
+            if (LevelCompleted.asphalt3Static == true)
+            {
+                GameObject button = Instantiate(buttonTemlate) as GameObject;
+                button.SetActive(true);
+
+                button.GetComponent<ButtonListButton>().SetText("Asphalt 3", "Asphalt3");
+
+                button.transform.SetParent(buttonTemlate.transform.parent, false);
+            }
+            if (LevelCompleted.asphalt4Static == true)
+            {
+                GameObject button = Instantiate(buttonTemlate) as GameObject;
+                button.SetActive(true);
+
+                button.GetComponent<ButtonListButton>().SetText("Asphalt 4", "Asphalt4");
 
                 button.transform.SetParent(buttonTemlate.transform.parent, false);
             }
         }
-    }
-
-    public void ButtonClicked(string s1)
-    {
-        string s2 = s1;
-        s1 = s1.Remove(s1.Length - 1);
-        levelBeaten.GetComponent<LevelInformations>().nameOfLevel = s1;
-        SceneManager.LoadScene(s2);
     }
 
     public void LoadSave()
@@ -92,38 +175,38 @@ public class ButtonListControl : MonoBehaviour
         player.GetComponent<Player>().skin5 = data.skin5;
         player.GetComponent<Player>().skinState = data.skinState;
 
-        if (data.grass1 == false && data.grass2 == false && data.grass3 == false && data.grass4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(1);
-        else if (data.grass1 == true && data.grass2 == false && data.grass3 == false && data.grass4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(2);
-        else if (data.grass1 == true && data.grass2 == true && data.grass3 == false && data.grass4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(3);
-        else if (data.grass1 == true && data.grass2 == true && data.grass3 == true && data.grass4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(4);
-        else if (data.grass1 == true && data.grass2 == true && data.grass3 == true && data.grass4 == true)
-            levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(4);
+        //if (data.grass1 == false && data.grass2 == false && data.grass3 == false && data.grass4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(1);
+        //else if (data.grass1 == true && data.grass2 == false && data.grass3 == false && data.grass4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(2);
+        //else if (data.grass1 == true && data.grass2 == true && data.grass3 == false && data.grass4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(3);
+        //else if (data.grass1 == true && data.grass2 == true && data.grass3 == true && data.grass4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(4);
+        //else if (data.grass1 == true && data.grass2 == true && data.grass3 == true && data.grass4 == true)
+        //    levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(4);
 
-        if (data.sand1 == false && data.sand2 == false && data.sand3 == false && data.sand4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(1);
-        else if (data.sand1 == true && data.sand2 == false && data.sand3 == false && data.sand4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(2);
-        else if (data.sand1 == true && data.sand2 == true && data.sand3 == false && data.sand4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(3);
-        else if (data.sand1 == true && data.sand2 == true && data.sand3 == true && data.sand4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(4);
-        else if (data.sand1 == true && data.sand2 == true && data.sand3 == true && data.sand4 == true)
-            levelBeaten.GetComponent<LevelInformations>().SetSandNumber(4);
+        //if (data.sand1 == false && data.sand2 == false && data.sand3 == false && data.sand4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetSandNumber(1);
+        //else if (data.sand1 == true && data.sand2 == false && data.sand3 == false && data.sand4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetSandNumber(2);
+        //else if (data.sand1 == true && data.sand2 == true && data.sand3 == false && data.sand4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetSandNumber(3);
+        //else if (data.sand1 == true && data.sand2 == true && data.sand3 == true && data.sand4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetSandNumber(4);
+        //else if (data.sand1 == true && data.sand2 == true && data.sand3 == true && data.sand4 == true)
+        //    levelBeaten.GetComponent<LevelInformations>().SetSandNumber(4);
 
-        if (data.asphalt1 == false && data.asphalt2 == false && data.asphalt3 == false && data.asphalt4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(1);
-        else if (data.asphalt1 == true && data.asphalt2 == false && data.asphalt3 == false && data.asphalt4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(2);
-        else if (data.asphalt1 == true && data.asphalt2 == true && data.asphalt3 == false && data.asphalt4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(3);
-        else if (data.asphalt1 == true && data.asphalt2 == true && data.asphalt3 == true && data.asphalt4 == false)
-            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(4);
-        else if (data.asphalt1 == true && data.asphalt2 == true && data.asphalt3 == true && data.asphalt4 == true)
-            levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(4);
+        //if (data.asphalt1 == false && data.asphalt2 == false && data.asphalt3 == false && data.asphalt4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(1);
+        //else if (data.asphalt1 == true && data.asphalt2 == false && data.asphalt3 == false && data.asphalt4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(2);
+        //else if (data.asphalt1 == true && data.asphalt2 == true && data.asphalt3 == false && data.asphalt4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(3);
+        //else if (data.asphalt1 == true && data.asphalt2 == true && data.asphalt3 == true && data.asphalt4 == false)
+        //    levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(4);
+        //else if (data.asphalt1 == true && data.asphalt2 == true && data.asphalt3 == true && data.asphalt4 == true)
+        //    levelBeaten.GetComponent<LevelInformations>().SetAsphaltNumber(4);
 
         Debug.Log("Save wczytany pomyslnie.");
     }
