@@ -17,7 +17,7 @@ public class LevelCompleted : MonoBehaviour
     public bool asphalt2;
     public static bool asphalt2Static = false;
     public bool asphalt3;
-    public static bool asphalt3Static = true;
+    public static bool asphalt3Static = false;
     public bool asphalt4;
     public static bool asphalt4Static = false;
     public bool sand1;
