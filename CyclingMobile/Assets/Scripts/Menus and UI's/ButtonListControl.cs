@@ -20,10 +20,6 @@ public class ButtonListControl : MonoBehaviour
 
         if (biome == "grass")
         {
-            Debug.Log(LevelCompleted.grass1Static);
-            Debug.Log(LevelCompleted.grass2Static);
-            Debug.Log(LevelCompleted.grass3Static);
-            Debug.Log(LevelCompleted.grass4Static);
             if (LevelCompleted.grass1Static == true)
             {
                 GameObject button = Instantiate(buttonTemlate) as GameObject;
@@ -64,10 +60,6 @@ public class ButtonListControl : MonoBehaviour
 
         if (biome == "sand")
         {
-            Debug.Log(LevelCompleted.sand1Static);
-            Debug.Log(LevelCompleted.sand2Static);
-            Debug.Log(LevelCompleted.sand3Static);
-            Debug.Log(LevelCompleted.sand4Static);
             if (LevelCompleted.sand1Static == true)
             {
                 GameObject button = Instantiate(buttonTemlate) as GameObject;
@@ -108,10 +100,6 @@ public class ButtonListControl : MonoBehaviour
 
         if (biome == "asphalt")
         {
-            Debug.Log(LevelCompleted.asphalt1Static);
-            Debug.Log(LevelCompleted.asphalt2Static);
-            Debug.Log(LevelCompleted.asphalt3Static);
-            Debug.Log(LevelCompleted.asphalt4Static);
             if (LevelCompleted.asphalt1Static == true)
             {
                 GameObject button = Instantiate(buttonTemlate) as GameObject;
@@ -173,7 +161,7 @@ public class ButtonListControl : MonoBehaviour
         player.GetComponent<Player>().skin3 = data.skin3;
         player.GetComponent<Player>().skin4 = data.skin4;
         player.GetComponent<Player>().skin5 = data.skin5;
-        player.GetComponent<Player>().skinState = data.skinState;
+        Player.skinState = data.skinState;
 
         //if (data.grass1 == false && data.grass2 == false && data.grass3 == false && data.grass4 == false)
         //    levelBeaten.GetComponent<LevelInformations>().SetGrassNumber(1);

@@ -65,8 +65,8 @@ public class BicycleController : MonoBehaviour
     private void Awake()
     {
         //LoadSave();
-        Debug.Log(player.GetComponent<Player>().skinState);
-        BicycleControllerAnimator.SetInteger("skinState", player.GetComponent<Player>().skinState);
+        Debug.Log(Player.skinState);
+        BicycleControllerAnimator.SetInteger("skinState", Player.skinState);
     }
 
     void Start()
@@ -396,7 +396,7 @@ public class BicycleController : MonoBehaviour
         player.GetComponent<Player>().skin3 = data.skin3;
         player.GetComponent<Player>().skin4 = data.skin4;
         player.GetComponent<Player>().skin5 = data.skin5;
-        player.GetComponent<Player>().skinState = data.skinState;
+        Player.skinState = data.skinState;
 
         Debug.Log("Save wczytany pomyslnie.");
     }

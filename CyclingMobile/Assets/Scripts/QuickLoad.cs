@@ -43,7 +43,7 @@ public class QuickLoad : MonoBehaviour
         player.GetComponent<Player>().skin3 = data.skin3;
         player.GetComponent<Player>().skin4 = data.skin4;
         player.GetComponent<Player>().skin5 = data.skin5;
-        player.GetComponent<Player>().skinState = data.skinState;
+        Player.skinState = data.skinState;
 
         if (data.grass1 == true && data.grass2 == true)
         {

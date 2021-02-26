@@ -50,7 +50,7 @@ public class PlayerData
         skin3 = bc.skin3;
         skin4 = bc.skin4;
         skin5 = bc.skin5;
-        skinState = bc.skinState;
+        skinState = Player.skinState;
     }
 
 
